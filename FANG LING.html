@@ -207,7 +207,19 @@ mjx-container { break-inside: avoid; }
 @include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
 
 A:link, A:visited { text-decoration: none; color: cornflowerblue; }
-A:hover { background-color: cornflowerblue; color: #c5d1d3 }
+A:hover { background-color: cornflowerblue; color: #c5d1d3; text-decoration: none; }
+
+.stackpreview { display: inline-block; margin: 3ex 1em; padding: 4px;
+  clear: both; text-align: center; background-color: #d3dee0;
+  vertical-align: top; }
+  /* margin: 2ex 0.5em; padding: 0.4ex 0.5em; */
+.stackpreview P { margin-top: 0em; }
+.stackpreview P + P, .stackpreview DIV + P { margin-bottom: 0.5em; }
+.image A IMG, .image A TABLE { border: #c5d1d3 solid 4px; position: relative; left: -4px; top: -4px; }
+.image A:hover IMG, .image A:hover TABLE { border-color: #d3dee0; opacity: 0.5; }
+.image A:hover { background-color: inherit; }
+.heading { font-size: x-large; font-weight: bold; }
+.caption { font-style: italic; }
 
 /* =========== */
 
@@ -265,7 +277,7 @@ html, body {
 
 @media only screen and (min-width: 1400px) {
 	#write {
-			max-width: 914px;
+			/*max-width: 914px;*/
 	}
 }
 
@@ -355,10 +367,11 @@ a {
 	text-decoration: none;
 	color: #065588;
 }
-a:hover,
+/* Removed by Fang Ling. */
+/*a:hover,
 a:active {
 	text-decoration: underline;
-}
+}*/
 /* block spacing */
 
 p,
@@ -807,9 +820,27 @@ input {
   Undergraduate&nbsp;•&nbsp;
   Guitar Player&nbsp;•&nbsp;
   <a title="Github" href="http://github.com/fang-ling">Github</a>
-</div><ul><li><strong><span>This section is in progress.</span></strong></li></ul><div style="background: #c5d1d3;color: #000;padding: 1ex 1em;font-weight:bold;text-align: right;">
+</div>
+<div style="text-align:center">
+<div class="stackpreview" style="width: 300px;">
+  <p class="image" style="white-space: normal;">
+    <a href="asm/"><img width="300" height="300" src="images/tbc.png" alt="screenshot of cmu 15-213 fa15 bomb lab"></a>
+  </p><p class="heading" style="white-space: normal;">
+    <a href="asm/">Labs &amp; Assignments</a>
+  </p><p class="caption" style="white-space: normal;">Above:
+    <b><a href="">Bomb Lab (CMU 15-213 fa15)</a></b> (Coming soon).
+  </p></div>
+  <div class="stackpreview" style="width: 300px;">
+  <p class="image" style="white-space: normal;">
+    <a href="blog/"><img width="300" height="300" src="images/tbc.png" alt="tbc."></a>
+  </p><p class="heading" style="white-space: normal;">
+    <a href="blog/">Posts</a>
+  </p><p class="caption" style="white-space: normal;">Above:
+    <b><a href="">...</a></b>
+  </p></div>
+</div><div style="background: #c5d1d3;color: #000;padding: 1ex 1em;font-weight:bold;text-align: right;">
   <i>Last updated November 7, 2022 by <a href="https://fangling.uk/">Fang Ling</a>.</i>
-</div><p>&nbsp;</p><div class="footer foot-font" style="text-align: center;">Made with
+</div><br><div class="footer foot-font" style="text-align: center;">Made with
 <i style="margin: 0 6px;"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="heart" data-prefix="fas" width="12px" height="12px" viewBox="0 0 512 512">
 <defs></defs>
 <path fill="#eb513e" d="M462 63c-54-47-136-39-186 13l-20 21-20-21C186 24 105 16 50 63c-63 53-66 149-10 208l193 199c13 13 33 13 46 0l193-199c56-59 53-155-10-208z">
@@ -817,6 +848,23 @@ input {
 </svg></i> <a href="https://fangling.uk" style="color: #fbfbfb;text-decoration: none;font-size: 13px;padding: 4px 8px;-webkit-border-radius: 3px;border-radius: 3px;background: #c5d1d3;">
 by Fang Ling</a><br>
 <p class="copyright">© 2018-2022 Fang Ling</p>
-</div><p>&nbsp;</p></div></div>
+</div>
+<script type="text/javascript"> 
+  /* Written by Erik Demaine <edemaine@mit.edu>, 2012.
+ * Distributed under the MIT License
+ * [http://www.opensource.org/licenses/mit-license.php]
+ */
+  var divs = document.getElementsByTagName ('div');
+  var maxHeight = 0;
+  for (var i = 0; i < divs.length; i++) {
+    if ((' ' + divs[i].className + ' ').indexOf (' stackpreview ') >= 0) {
+      maxHeight = Math.max (maxHeight, divs[i].offsetHeight);
+    }
+  }
+  for (var i = 0; i < divs.length; i++) {
+    if ((' ' + divs[i].className + ' ').indexOf (' stackpreview ') >= 0) {
+      divs[i].style.height = maxHeight + 'px';
+    }
+  }</script><p>&nbsp;</p></div></div>
 </body>
 </html>
