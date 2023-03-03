@@ -12,7 +12,7 @@ html {
     --active-file-bg-color: #dadada;
     --active-file-bg-color: rgba(32, 43, 51, 0.63);
     --active-file-text-color: white;
-    --bg-color: #f3f2ee;
+    --bg-color: #FFFBF5;
     --text-color: #1f0909;
     --control-text-color: #444;
     --rawblock-edit-panel-bd: #e5e5e5;
@@ -216,8 +216,8 @@ p {
 
 a {
     cursor: pointer;
-    text-decoration: none;
-    color: #065588
+    text-decoration: none
+    /*color: #065588*/
 }
 
 sup.md-footnote {
@@ -978,15 +978,47 @@ mjx-container {
 
 @include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
 
-A:link,
-A:visited {
+A:link, A:visited {
     text-decoration: none;
-    color: #6495ed
+    color: #674188
 }
 
 A:hover {
-    background-color: #6495ed;
-    color: #c5d1d3;
+    background-color: #674188;
+    color: #C3ACD0;
+    text-decoration: none
+}
+
+A:link, A:visited {
+    text-decoration: none;
+    color: #674188
+}
+
+A:hover {
+    background-color: #674188;
+    color: #C3ACD0;
+    text-decoration: none
+}
+
+.purplebox A:link, .purplebox A:visited {
+    text-decoration: none;
+    color: yellow
+}
+
+.purplebox A:hover {
+    background-color: yellow;
+    color: #674188;
+    text-decoration: none
+}
+
+.purplebox A:link, .purplebox A:visited {
+    text-decoration: none;
+    color: yellow
+}
+
+.purplebox A:hover {
+    background-color: yellow;
+    color: #674188;
     text-decoration: none
 }
 
@@ -996,7 +1028,7 @@ A:hover {
     padding: 4px;
     clear: both;
     text-align: center;
-    background-color: #d3dee0;
+    background-color: #C3ACD0;
     vertical-align: top
 }
 
@@ -1011,7 +1043,7 @@ A:hover {
 
 .image A IMG,
 .image A TABLE {
-    border: 4px solid #c5d1d3;
+    border: 4px solid #674188;
     position: relative;
     left: -4px;
     top: -4px
@@ -1019,7 +1051,7 @@ A:hover {
 
 .image A:hover IMG,
 .image A:hover TABLE {
-    border-color: #d3dee0;
+    border-color: #C3ACD0;
     opacity: .5
 }
 
@@ -1051,7 +1083,7 @@ html {
 
 body,
 html {
-    background-color: #f3f2ee;
+    background-color: #FFFBF5;
     font-family: "PT Serif", 'Times New Roman', Times, serif;
     color: #1f0909;
     line-height: 1.5em
@@ -1263,7 +1295,7 @@ tr:nth-child(2n) {
     vertical-align: middle;
     text-align: center;
     color: #ddd;
-    background-color: #f3f2ee
+    background-color: #FFFBF5
 }
 
 .md-task-list-item>input:checked:before,
@@ -1316,11 +1348,11 @@ tr:nth-child(2n) {
 }
 
 #write div.md-toc-tooltip {
-    background-color: #f3f2ee
+    background-color: #FFFBF5
 }
 
 #typora-sidebar {
-    background-color: #f3f2ee;
+    background-color: #FFFBF5;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .375);
     box-shadow: 0 6px 12px rgba(0, 0, 0, .375)
 }
@@ -1358,7 +1390,7 @@ tr:nth-child(2n) {
 }
 
 .modal-content {
-    background-color: #f3f2ee
+    background-color: #FFFBF5
 }
 
 .auto-suggest-container ul li {
@@ -1369,7 +1401,7 @@ tr:nth-child(2n) {
 #top-titlebar *,
 .megamenu-content,
 .megamenu-menu {
-    background: #f3f2ee;
+    background: #FFFBF5;
     color: #1f0909
 }
 
