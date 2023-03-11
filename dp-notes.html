@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width initial-scale=1'>
+<meta content='width=device-width initial-scale=1' name='viewport'>
 <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'>
-<link rel='stylesheet' type='text/css' href='style.css'>
+<link href='style.css' type='text/css' rel='stylesheet'>
 <title>
 Dynamic Programming Notes
 </title>
@@ -28,10 +28,9 @@ Guitar Player
 Github
 </a>
 </div>
-<h2>Dynamic Programming Notes</h2>
-<h3>1: # of distinct paths</h3>
+<h2>1: # of distinct paths</h2>
 <p>Given a chessboard of size $m\times n$ ($m$ rows, $n$ columns), at the beginning, you are at the most southwest corner $(1,1)$. You can either go up or right one unit each time, how many distinct paths to go to the most northeast corner $(m,n)$?</p>
-<h4>SRTBOT:</h4>
+<h3>SRTBOT:</h3>
 <ul>
 <li><strong>S</strong>ubproblem: $p(i,j)=$ # of distinct paths to go to point $(i,j)$</li>
 <li><strong>R</strong>elation: $p(i,j) = p(i - 1, j) + p(i, j - 1)$</li>
@@ -41,16 +40,17 @@ Github
 <li><strong>T</strong>ime: $O(mn)\times O(1)=O(mn)$</li>
 </ul>
 <p>Related problem: <a href="https://www.luogu.com.cn/problem/P1002">Luogu P1002</a></p>
+<details><summary>Solution</summary>
 <script src="https://gist.github.com/fang-ling/85b867e3ac1170f332ddb91e710a6254.js"></script>
-<h3>2: Longest Palindromic Subsequence</h3>
-<p>Given a string  <code>s</code>, find  <em>the longest palindromic  <strong>subsequence</strong>'s length in</em>  <code>s</code>.</p>
-<p>A  <strong>subsequence</strong>  is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.</p>
-<h4>SRTBOT:</h4>
+</details>
+<h2>2: Longest Palindromic Subsequence</h2>
+<p>Given a string  <code>s</code>, find  <em>the longest palindromic  <strong>subsequence</strong>'s length in</em>  <code>s</code>. A  <strong>subsequence</strong>  is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.</p>
+<h3>SRTBOT:</h3>
 <ul>
 <li><strong>S</strong>ubproblem: $l(i,j)=$ the longest palindromic subsequence of substring $s[i ... j]$ (inclusive)</li>
 <li><strong>R</strong>elation:
 $$
-l(i,j) = \left\{\begin{aligned} \left\{\begin{aligned}2,\quad&i==j\\2+l(i+1,j-1),\quad& \rm{otherwise}\end{aligned}\right.,\quad& s[i]==[j]\\\max\{l(i+1,j),l(i,j-1)\},\quad& \rm{otherwise}\end{aligned}\right.
+l(i,j) = \left\{\begin{aligned} \left\{\begin{aligned}2,\quad&i==j\\2+l(i+1,j-1),\quad& \rm{otherwise}\end{aligned}\right.,\quad& s[i]==s[j]\\\max\{l(i+1,j),l(i,j-1)\},\quad& \rm{otherwise}\end{aligned}\right.
 $$</li>
 <li><strong>T</strong>opological order: $i=(|s|-1)\to 0$, $j=(i+1)\to (|s|-1)$</li>
 <li><strong>B</strong>ase case: $l(i,i) = 1\quad(i\in [0,|s|))$</li>
@@ -58,7 +58,28 @@ $$</li>
 <li><strong>T</strong>ime: $O(|s|^2)\times O(1)=O(|s|^2)$</li>
 </ul>
 <p>Related problem: <a href="https://leetcode.com/problems/longest-palindromic-subsequence/">LeetCode 516</a></p>
+<details><summary>Solution</summary>
 <script src="https://gist.github.com/fang-ling/fa533002ddb7fcedbe8f77b43fb611f9.js"></script>
+</details>
+<h2>3: Longest Common Subsequence</h2>
+<p>Given two sequences <code>A</code> and <code>B</code>, find the length of longest sequence L that is a subsequence of both <code>A</code> and <code>B</code>.</p>
+<h3>SRTBOT:</h3>
+<ul>
+<li><strong>S</strong>ubproblem: $l(i,j)=LCS(A[i:], B[j:])$, $X[i:]$ means suffixes, $i\in [0,|A|], j\in [0, |B|]$</li>
+<li><strong>R</strong>elation:
+$$
+l(i,j)=
+\left\{\begin{aligned} 1+l(i+1,j+1),\quad& A[i]==B[j]\\\max\{l(i+1,j),l(i,j+1)\},\quad& \rm{otherwise}\end{aligned}\right.
+$$</li>
+<li><strong>T</strong>opological order: $i=(|A|-1)\to 0$, $j=(|B|-1)\to 0$</li>
+<li><strong>B</strong>ase case: $l(|A|-1,j)=l(i,|B|-1)=0$</li>
+<li><strong>O</strong>riginal problem: $l(0,0)$</li>
+<li><strong>T</strong>ime: $O(|A||B|)\times O(1)=O(|A||B|)$</li>
+</ul>
+<p>Related problem: <a href="https://leetcode.com/problems/longest-common-subsequence/">LeetCode 1143</a></p>
+<details><summary>Solution</summary>
+<script src="https://gist.github.com/fang-ling/baca59ff5e50356350bcf2d6fa5448c0.js"></script>
+</details>
 
 <div class='purplebox foot-box'>
 <i>
@@ -79,7 +100,7 @@ by Fang Ling
 zyy v0.0.3
 </a>
 <span>
-Build: 1d
+Build: 1f
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
