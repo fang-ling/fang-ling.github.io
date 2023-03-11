@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
+<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'>
+<link rel='stylesheet' type='text/css' href='style.css'>
+<title>
+Dynamic Programming Notes
+</title>
+</head>
+<body class='typora-export'>
+<div class='typora-export-content'>
+<div id='write'>
+<center>
+<h1 class='title-text'>
+<strong>
+Dynamic Programming Notes
+</strong>
+</h1>
+</center>
+<div class='purplebox head-box'>
+Undergraduate
+&nbsp;&bull;&nbsp;
+Guitar Player
+&nbsp;&bull;&nbsp;
+<a href='https://github.com/fang-ling'>
+Github
+</a>
+</div>
+<h2>Dynamic Programming Notes</h2>
+<h3>1: # of distinct paths</h3>
+<p>Given a chessboard of size $m\times n$ ($m$ rows, $n$ columns), at the beginning, you are at the most southwest corner $(1,1)$. You can either go up or right one unit each time, how many distinct paths to go to the most northeast corner $(m,n)$?</p>
+<h4>SRTBOT:</h4>
+<ul>
+<li><strong>S</strong>ubproblem: $p(i,j)=$ # of distinct paths to go to point $(i,j)$</li>
+<li><strong>R</strong>elation: $p(i,j) = p(i - 1, j) + p(i, j - 1)$</li>
+<li><strong>T</strong>opological order: $i=1\to m$, $j=1\to n$</li>
+<li><strong>B</strong>ase case: $p(1,h) = p(k,1) = 1\quad(k\in [1,m], h\in[1,n])$</li>
+<li><strong>O</strong>riginal problem: $p(m,n)$</li>
+<li><strong>T</strong>ime: $O(mn)\times O(1)=O(mn)$</li>
+</ul>
+<p>Related problem: <a href="https://www.luogu.com.cn/problem/P1002">Luogu P1002</a></p>
+<script src="https://gist.github.com/fang-ling/85b867e3ac1170f332ddb91e710a6254.js"></script>
+<h3>2: Longest Palindromic Subsequence</h3>
+<p>Given a string  <code>s</code>, find  <em>the longest palindromic  <strong>subsequence</strong>'s length in</em>  <code>s</code>.</p>
+<p>A  <strong>subsequence</strong>  is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.</p>
+<h4>SRTBOT:</h4>
+<ul>
+<li><strong>S</strong>ubproblem: $l(i,j)=$ the longest palindromic subsequence of substring $s[i ... j]$ (inclusive)</li>
+<li><strong>R</strong>elation:
+$$
+l(i,j) = \left\{\begin{aligned} \left\{\begin{aligned}2,\quad&i==j\\2+l(i+1,j-1),\quad& \rm{otherwise}\end{aligned}\right.,\quad& s[i]==[j]\\\max\{l(i+1,j),l(i,j-1)\},\quad& \rm{otherwise}\end{aligned}\right.
+$$</li>
+<li><strong>T</strong>opological order: $i=(|s|-1)\to 0$, $j=(i+1)\to (|s|-1)$</li>
+<li><strong>B</strong>ase case: $l(i,i) = 1\quad(i\in [0,|s|))$</li>
+<li><strong>O</strong>riginal problem: $l(0,|s|-1)$</li>
+<li><strong>T</strong>ime: $O(|s|^2)\times O(1)=O(|s|^2)$</li>
+</ul>
+<p>Related problem: <a href="https://leetcode.com/problems/longest-palindromic-subsequence/">LeetCode 516</a></p>
+<script src="https://gist.github.com/fang-ling/fa533002ddb7fcedbe8f77b43fb611f9.js"></script>
+
+<div class='purplebox foot-box'>
+<i>
+Last updated March 11, 2023 by 
+<a href='https://fangling.uk'>
+Fang Ling
+</a>
+.
+</i>
+</div>
+<br>
+<div class='footer'>
+Made with ❤️
+<a href='https://fangling.uk'>
+by Fang Ling
+</a>
+<a href='https://github.com/fang-ling/zyy'>
+zyy v0.0.3
+</a>
+<span>
+Build: 1d
+</span>
+<p class='copyright'>
+© 2018-2023 Fang Ling
+</p>
+</div>
+</div>
+</div>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
