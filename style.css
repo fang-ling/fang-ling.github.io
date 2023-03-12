@@ -1044,7 +1044,7 @@ A:hover {
 
 .stackpreview DIV+P,
 .stackpreview P+P {
-    margin-bottom: .5em
+    margin-bottom: 0.5em
 }
 
 .image A IMG,
