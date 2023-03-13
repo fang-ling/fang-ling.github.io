@@ -1589,7 +1589,7 @@ input {
     font-size: 250%;
 }
 
-.purplebox {
+.purplebox, .section {
     background: #674188;
     color: #F7EFE5;
     padding: 1ex 1em;
@@ -1597,11 +1597,18 @@ input {
     font-size: large;
 }
 
+.section {
+    text-transform: uppercase;
+    padding: 0.5ex 0.5em;
+    font-size: 1.5em;
+}
+
 .head-box {
     text-align: center;
 }
 
 .foot-box {
+    margin-top: 0.5em;
     text-align: right;
 }
 
@@ -1617,4 +1624,8 @@ input {
     padding: 4px 8px;
     border-radius: 3px;
     background: #674188;
+}
+
+#reset-all {
+    background-color: unset;
 }
