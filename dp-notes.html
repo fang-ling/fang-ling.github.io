@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width initial-scale=1'>
+<meta content='width=device-width initial-scale=1' name='viewport'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'>
-<link type='text/css' rel='stylesheet' href='style.css'>
+<link type='text/css' href='style.css' rel='stylesheet'>
 <title>
 Dynamic Programming Notes
 </title>
@@ -80,10 +80,28 @@ $$</li>
 <details><summary>Solution</summary>
 <script src="https://gist.github.com/fang-ling/baca59ff5e50356350bcf2d6fa5448c0.js"></script>
 </details>
+<h2>4: Longest Increasing Subsequence (LIS)</h2>
+<p>Given a array A, find length of a longest (not necessarily contiguous) subsequence of A that strictly increases.</p>
+<ul>
+<li>Example: $A = [10,9,2,5,3,7,101,18]$, The longest increasing subsequence is $[2,3,7,101]$, therefore the length is $4$.</li>
+</ul>
+<h3>SRTBOT:</h3>
+<ul>
+<li><strong>S</strong>ubproblem: $l(i)=$ length of longest increasing subsequence of suffix $A[i:]$ that includes $A[i]$. For $i$ in $[0, |A|]$</li>
+<li><strong>R</strong>elation: $l(i)=\max\{1+l(j)|i&lt;j&lt;|A|,A[j]&gt;A[i]\}\cup\{1\}$</li>
+<li><strong>T</strong>opological order: Decreasing $i$</li>
+<li><strong>B</strong>ase case: No base case necessary, because we consider the possibility that $A[i]$ is last</li>
+<li><strong>O</strong>riginal problem: $\max\{l(i)|0\leq i&lt;|A|\}$</li>
+<li><strong>T</strong>ime: $O(|A|)\times O(|A|)=O(|A|^2)$</li>
+</ul>
+<p>Related problem: <a href="https://leetcode.com/problems/longest-increasing-subsequence/">LeetCode 300</a></p>
+<details><summary>Solution</summary>
+<script src="https://gist.github.com/fang-ling/8e8887c3c7911c32c6812326e96215ac.js"></script>
+</details>
 
 <div class='purplebox foot-box'>
 <i>
-Last updated March 11, 2023 by 
+Last updated March 14, 2023 by 
 <a href='https://fangling.uk'>
 Fang Ling
 </a>
@@ -100,7 +118,7 @@ by Fang Ling
 zyy v0.0.3-beta
 </a>
 <span>
-Build: 37
+Build: 41
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
