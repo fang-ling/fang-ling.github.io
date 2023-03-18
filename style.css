@@ -105,7 +105,9 @@ body.typora-export {
 @media screen and (max-width:500px) {
     body.typora-export {
         padding-left: 0;
-        padding-right: 0
+        padding-right: 0;
+        /* fix gist font size bug on iPhone OS */
+        -webkit-text-size-adjust: 100%;
     }
 
     #write {
