@@ -3,19 +3,29 @@
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width initial-scale=1'>
-<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'>
-<link type='text/css' href='style.css' rel='stylesheet'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
 <title>
-Blog
+Solutions for Concrete Mathematics
 </title>
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <h1 class='title-text'>
 <strong>
-Blog
+Solutions for Concrete Mathematics
 </strong>
 </h1>
 <div class='purplebox head-box'>
@@ -27,11 +37,14 @@ Guitar Player
 Github
 </a>
 </div>
+<h2>Chapter 5 Binomial Coefficients</h2>
+<h3>Warmups</h3>
 <ol>
-<li>[<em>March 23, 2023</em>] <a href="sol_to_cm.html">Solutions for Concrete Mathematics</a></li>
-<li>[<em>March 19, 2023</em>] <a href="swift-markdown-html.html">A Guide to Rendering Markdown into HTML in Swift</a></li>
-<li>[<em>March 11, 2023</em>] <a href="dp-notes.html">Dynamic Programming Notes</a></li>
+<li>What is $11^4$? Why is this number easy to compute, for a person who knows binomial coefficients?</li>
 </ol>
+<blockquote>
+<p>$11^4=(10+1)^4=10^4+4\times10^3+6\times10^2+4\times10+1=14641$</p>
+</blockquote>
 
 <div class='purplebox foot-box'>
 <i>
