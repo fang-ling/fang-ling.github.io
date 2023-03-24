@@ -240,6 +240,14 @@ tr:nth-child(2n) {
     background: var(--color-canvas-subtle);
 }
 
+/* MathJax long formulas */
+mjx-container {
+  display: inline-grid;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
 /* iPhone OS */
 @media screen and (max-width:500px) {
     body {
