@@ -2,9 +2,9 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
-<meta content='width=device-width initial-scale=1' name='viewport'>
-<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'>
-<link type='text/css' href='style.css' rel='stylesheet'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'>
+<link rel='stylesheet' href='style.css' type='text/css'>
 <title>
 Solutions for Concrete Mathematics
 </title>
@@ -53,12 +53,14 @@ Github
 <blockquote>
 <p>We know that the middle value of $k$ to a binomial coefficient is the largest by intuition. i.e., $k=\lfloor \frac n2\rfloor=\lceil\frac n2\rceil$.</p>
 <p><strong>Proof</strong>:</p>
-<p>We can write $$\binom nk=\frac{n!}{k!(n-k)!}=\frac{\Gamma(n+1)}{\Gamma(k+1)\Gamma(n-k+1)}$$, where $\Gamma$ is the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma-function</a> and $n!=\Gamma(n+1)$.</p>
+<p>We can write
+$$\binom nk=\frac{n!}{k!(n-k)!}=\frac{\Gamma(n+1)}{\Gamma(k+1)\Gamma(n-k+1)}$$
+where $\Gamma$ is the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma-function</a> and $n!=\Gamma(n+1)$.</p>
 <p>We need to prove that $\binom nk\leq\binom n{\frac n2}$, which is $$\frac{\Gamma(n+1)}{\Gamma(k+1)\Gamma(n-k+1)}\leq\frac{\Gamma(n+1)}{\Gamma^2(\frac n2+1)}$$</p>
 <p>For this note that we only need to prove: $$\Gamma(k+1)\Gamma(n-k+1)\geq\Gamma^2(\frac n2+1)$$</p>
 <p>Rewrite it using the definition of Gamma-function: $\Gamma(z)=\int_0^{\infty}t^{z-1}e^{-t}dt$. Let $0&lt;\delta&lt;\Delta$.</p>
 <p>$$(\int_{\delta}^{\Delta}t^{\frac n2}e^{-t}dt)^2=(\int_{\delta}^{\Delta}(t^{\frac {n-k}2}e^{-\frac t2})(t^{\frac k2}e^{-\frac t2})dt)^2$$</p>
-<p>By <a href="https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality">Cauchy-Bunyakovsky-Schwarz Inequality for Definite Integrals</a>, we have:</p>
+<p>By <a href="https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequaltiy">Cauchy-Bunyakovsky-Schwarz Inequality for Definite Integrals</a>: $(\int f(x)g(x)dx)^2\leq\int f^2(x)dx\int g^2(x)dx$, we have:</p>
 <p>$$(\int_{\delta}^{\Delta}(t^{\frac {n-k}2}e^{-\frac t2})(t^{\frac k2}e^{-\frac t2})dt)^2\leq(\int_{\delta}^{\Delta}t^{n-k}e^{-t}dt)(\int_{\delta}^{\Delta}t^ke^{-t}dt)$$</p>
 <p>Let $\delta\to 0$ and $\Delta\to\infty$, it becomes:</p>
 <p>$$\Gamma^2(\frac n2+1)\leq\Gamma(k+1)\Gamma(n-k+1)$$</p>
@@ -66,7 +68,7 @@ Github
 
 <div class='purplebox foot-box'>
 <i>
-Last updated March 24, 2023 by 
+Last updated March 26, 2023 by 
 <a href='index.html'>
 Fang Ling
 </a>
@@ -83,7 +85,7 @@ by Fang Ling
 zyy v0.0.3-beta.8
 </a>
 <span>
-Build: c2
+Build: c8
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
