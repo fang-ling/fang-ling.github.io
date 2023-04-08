@@ -2,8 +2,8 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
-<meta content='width=device-width initial-scale=1' name='viewport'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
+<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'>
 <link type='text/css' href='style.css' rel='stylesheet'>
 <title>
 Solutions for Concrete Mathematics
@@ -77,11 +77,17 @@ where $\Gamma$ is the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gam
 <p>$$\begin{aligned}R&=\binom{n-1}k\binom{n+1}{k+1}\binom n{k-1}\\&=\frac{(n-1)!}{k!(n-1-k)!}\frac{(n+1)!}{(k+1)!(n+1-k-1)!}\frac{n!}{(k-1)!(n-k+1)!}\\&=\frac{(n-1)!(n+1)!n!}{k!(n-k-1)!(k+1)!(n-k)!(k-1)!(n-k+1)!}\end{aligned}$$</p>
 <p>We find that $L=R$ by rearranging terms.</p>
 </blockquote>
+<ol start="4">
+<li>Evaluate $\binom{-1}k$ by negating (actually un-negating) its upper index.</li>
+</ol>
+<blockquote>
+<p>By $\binom rk=(-1)^k\binom {k-r-1}k$ (integer $k$) (<strong>[CM] Table 174</strong>), we have $\binom{-1}k=(-1)^k\binom{k-(-1)-1}{k}=(-1)^k\binom kk=(-1)^k$.</p>
+</blockquote>
 
 </div>
 <div class='purplebox foot-box'>
 <i>
-Last updated April 2, 2023 by 
+Last updated April 8, 2023 by 
 <a href='index.html'>
 Fang Ling
 </a>
@@ -98,7 +104,7 @@ by Fang Ling
 zyy v0.0.4-beta
 </a>
 <span>
-Build: f5
+Build: f7
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
