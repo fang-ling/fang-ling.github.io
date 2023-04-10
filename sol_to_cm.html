@@ -3,8 +3,8 @@
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width initial-scale=1'>
-<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'>
-<link rel='stylesheet' type='text/css' href='style.css'>
+<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'>
+<link href='style.css' rel='stylesheet' type='text/css'>
 <title>
 Solutions for Concrete Mathematics
 </title>
@@ -83,11 +83,24 @@ where $\Gamma$ is the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gam
 <blockquote>
 <p>By $\binom rk=(-1)^k\binom {k-r-1}k$ (integer $k$) (<strong>[CM] Table 174</strong>), we have $\binom{-1}k=(-1)^k\binom{k-(-1)-1}{k}=(-1)^k\binom kk=(-1)^k$.</p>
 </blockquote>
+<ol start="5">
+<li>Let $p$ be prime. Show that $\binom pk \bmod p=0$ for $0&lt;k&lt;p$. What does this imply about the binomial coefficients $\binom {p-1}k$?</li>
+</ol>
+<blockquote>
+<p>If $0&lt;k&lt;p$, there's a $p$ in the numerator of $\binom pk$ with nothing to cancel it in the denominator.</p>
+<p>By $\binom rk=\frac{r^{\underline k}}{k!}, k\geq0$ (<strong>[CM] 5.1</strong>), we have $\binom{p-1}k=\frac{(p-1)^{\underline k}}{k!}=\frac{(p-1)(p-2)...(p-k)}{k!}$.</p>
+<p>It's easy to see that $p-x\equiv-x\pmod p, x\in[1,k]$. Since $p\equiv0\pmod p$.</p>
+<p>Now we have $\frac{(p-1)(p-2)...(p-k)}{k!}\equiv\frac{(-1)(-2)...(-k)}{k!}\pmod p$.</p>
+<p>That is equivalent to $\frac{(p-1)(p-2)...(p-k)}{k!}\equiv(-1)^k\pmod p$.</p>
+<p>i.e. we must have</p>
+<p>$$\binom{p-1}k\equiv(-1)^k\pmod p$$</p>
+<p>for $0\leq k&lt;p$.</p>
+</blockquote>
 
 </div>
 <div class='purplebox foot-box'>
 <i>
-Last updated April 8, 2023 by 
+Last updated April 10, 2023 by 
 <a href='index.html'>
 Fang Ling
 </a>
@@ -104,7 +117,7 @@ by Fang Ling
 zyy v0.0.4-beta
 </a>
 <span>
-Build: f8
+Build: fa
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
