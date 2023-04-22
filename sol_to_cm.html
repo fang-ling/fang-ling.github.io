@@ -2,9 +2,9 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width initial-scale=1'>
-<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'>
-<link rel='stylesheet' type='text/css' href='style.css'>
+<meta content='width=device-width initial-scale=1' name='viewport'>
+<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
 <title>
 Solutions for Concrete Mathematics
 </title>
@@ -96,11 +96,26 @@ where $\Gamma$ is the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gam
 <p>$$\binom{p-1}k\equiv(-1)^k\pmod p$$</p>
 <p>for $0\leq k&lt;p$.</p>
 </blockquote>
+<ol start="6">
+<li>Fix up the text's derivation in Problem 6, section 5.2, by correctly applying symmetry.</li>
+</ol>
+<blockquote>
+<p>Text's derivation is as follows:</p>
+<p>$$\frac1{n+1}\sum_k\binom{n+k}k\binom{n+1}{k+1}(-1)^k=\frac1{n+1}\sum_k\binom{n+k}n\binom{n+1}{k+1}(-1)^k$$</p>
+<p>&quot;We tried to apply symmetry when upper index cloud be negative!&quot;, i.e. $k&lt;-n$.</p>
+</blockquote>
+<ol start="7">
+<li>Is (5.34) ($r^{\underline k}(r-\frac12)^{\underline k}=(2r)^{\underline {2k}}/2^{2k}$) true also when $k&lt;0$?</li>
+</ol>
+<blockquote>
+<p>Let $k&gt;0$, then $-k&lt;0$, by $x^{\underline{-m}}=\frac1{\prod_{k=1}^mx+k}, m&gt;0$ (<strong>[CM] 2.51</strong>) we have:</p>
+<p>$$\begin{align}r^{\underline{-k}}(r-\frac12)^{\underline{-k}}=&\frac1{(\prod_{j=1}^kr+j)(\prod_{j=1}^kr-\frac12+j)}\\=&\frac{2^k\times2^k}{\prod_{j=1}^k(2r+2j)(2r-1+2j)}\\=&\frac{2^{2k}}{(2r+2)(2r-1+2)...(2r+2k)(2r-1+2k)}\\=&2^{2k}(2r)^{\underline{-2k}}\end{align}$$</p>
+</blockquote>
 
 </div>
 <div class='purplebox foot-box'>
 <i>
-Last updated April 10, 2023 by 
+Last updated April 22, 2023 by 
 <a href='index.html'>
 Fang Ling
 </a>
@@ -117,7 +132,7 @@ by Fang Ling
 zyy v0.0.4-beta
 </a>
 <span>
-Build: 100
+Build: 102
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
