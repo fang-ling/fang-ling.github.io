@@ -2,9 +2,9 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
-<meta content='width=device-width initial-scale=1' name='viewport'>
-<link type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet'>
-<link href='style.css' type='text/css' rel='stylesheet'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
+<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'>
+<link rel='stylesheet' href='style.css' type='text/css'>
 <title>
 Solutions for Concrete Mathematics
 </title>
@@ -111,11 +111,18 @@ where $\Gamma$ is the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gam
 <p>Let $k&gt;0$, then $-k&lt;0$, by $x^{\underline{-m}}=\frac1{\prod_{k=1}^mx+k}, m&gt;0$ (<strong>[CM] 2.51</strong>) we have:</p>
 <p>$$\begin{align}r^{\underline{-k}}(r-\frac12)^{\underline{-k}}=&\frac1{(\prod_{j=1}^kr+j)(\prod_{j=1}^kr-\frac12+j)}\\=&\frac{2^k\times2^k}{\prod_{j=1}^k(2r+2j)(2r-1+2j)}\\=&\frac{2^{2k}}{(2r+2)(2r-1+2)...(2r+2k)(2r-1+2k)}\\=&2^{2k}(2r)^{\underline{-2k}}\end{align}$$</p>
 </blockquote>
+<ol start="8">
+<li>Evaluate $$\sum_k\binom nk(-1)^k(1-k/n)^n$$What is the approximate value of this sum, when $n$ is very large?</li>
+</ol>
+<blockquote>
+<p>$$\begin{aligned}\sum_k\binom nk(-1)^k(1-k/n)^n&=\sum_k\binom nk((-1)^{-1})^k(k/n-1)^n(-1)^n\\&=\sum_k\binom nk(-1)^{n-k}(k/n-1)^n\end{aligned}$$</p>
+<p>Let $f(0+k)=(k/n-1)^n$, then the sum becomes $\sum_k\binom nk(-1)^{n-k}f(0+k)$. By (<strong>[CM] 5.40</strong>), the sum equals $\Delta^nf(0)=n!/n^n$. When $n$ is large, Stirling's approximation says that this is approximately $\frac{\sqrt{2\pi n}}{e^n}$.</p>
+</blockquote>
 
 </div>
 <div class='purplebox foot-box'>
 <i>
-Last updated April 22, 2023 by 
+Last updated May 11, 2023 by 
 <a href='index.html'>
 Fang Ling
 </a>
@@ -132,7 +139,7 @@ by Fang Ling
 zyy v0.0.4-beta
 </a>
 <span>
-Build: 108
+Build: 109
 </span>
 <p class='copyright'>
 © 2018-2023 Fang Ling
