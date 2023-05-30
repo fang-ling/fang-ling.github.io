@@ -1,5 +1,5 @@
 :root {
-    --monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+    --monospace: ui-monospace,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
     /* <code> tag color */
     --color-neutral-muted: rgba(175, 184, 193, 0.2);
     --bg-color: #FFFBF5;
