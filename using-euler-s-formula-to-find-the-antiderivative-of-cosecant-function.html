@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'>
+<link rel='stylesheet' href='style.css' type='text/css'>
+<title>
+Using Euler's Formula to Find the Antiderivative of Cosecant Function
+</title>
+<!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1 class='title-text'>
+<strong>
+Using Euler's Formula to Find the Antiderivative of Cosecant Function
+</strong>
+</h1>
+<div class='purplebox head-box'>
+Undergraduate
+&nbsp;&bull;&nbsp;
+Guitar Player
+&nbsp;&bull;&nbsp;
+<a href='https://github.com/fang-ling'>
+GitHub
+</a>
+</div>
+<div class='page-container'>
+<p>Calculus can be a challenging subject for many students, but it's also a fascinating one. One of the fundamental concepts in calculus is finding antiderivatives, or the inverse operation of differentiation. In trigonometric functions, some integrals are very simple, like $\int \cos x dx$, while others are not that simple, such as $\int\csc x dx$. For the latter, people usually complete the calculations using some fancy trigonometric substitutions. But in this article, we will explore how to use Euler's formula to find the antiderivative of the Cosecant function.</p>
+<p>First, let's review Euler's formula, which states that $e^{i\theta}=\cos\theta+i\sin\theta$, where $i$ is the imaginary unit, and $\theta$ is any real number. This formula relates the exponential function to the trigonometric functions cosine and sine. Replace $i$ with $-i$, we have $e^{-i\theta}=\cos\theta-i\sin\theta$. Then solve for cosine and sine, we can derive two equations:</p>
+<p>$$
+\begin{aligned}
+\cos\theta = \frac{e^{i\theta}+e^{-i\theta}}2 \\
+\sin\theta = \frac{e^{i\theta}-e^{-i\theta}}{2i}
+\end{aligned}
+$$</p>
+<p>Next, let's consider the Cosecant function, which is defined as $\csc\theta=\frac1{\sin\theta}$. To find the antiderivative of $\csc\theta$, we need to rewrite it in terms of Euler's formula. We can do this by plug in the formula derived before, which gives us:</p>
+<p>$$
+\begin{aligned}
+\int\csc\theta d\theta&=\int\frac1{\sin\theta}d\theta\\
+&=2\int\frac{i d\theta}{e^{i\theta}-e^{-i\theta}}
+\end{aligned}
+$$</p>
+<p>Multiplying both the numerator and denominator by $e^{i\theta}$, we get:</p>
+<p>$$
+\begin{aligned}
+2\int\frac{i d\theta}{e^{i\theta}-e^{-i\theta}}&=2\int\frac{ie^{i\theta} d\theta}{e^{2i\theta}-1}\\
+&=2\int\frac{d{e^{i\theta}}}{(e^{i\theta}+1)(e^{i\theta}-1)}\\
+\end{aligned}
+$$</p>
+<p>Using the method of partial fractions, which gives us:</p>
+<p>$$
+\begin{aligned}
+2\int\frac{d{e^{i\theta}}}{(e^{i\theta}+1)(e^{i\theta}-1)}&=2\int\left(\frac{1/2}{e^{i\theta}-1}-\frac{1/2}{e^{i\theta}+1}\right)d{e^{i\theta}}\\
+&=\int\frac{d(e^{i\theta}-1)}{e^{i\theta}-1}-\int\frac{d(e^{i\theta}+1)}{e^{i\theta}+1}\\
+&=\ln|e^{i\theta}-1|-\ln|e^{i\theta}+1|+C\\
+&=\ln\left|\frac{e^{i\theta}-1}{e^{i\theta}+1}\right| +C
+\end{aligned}
+$$</p>
+<p>Therefore, the antiderivative of $\csc\theta$ is:</p>
+<p>$$
+\ln\left|\frac{e^{i\theta}-1}{e^{i\theta}+1}\right| +C
+$$</p>
+<p>But wait a minute, this result looks different from the standard result $-\ln|\csc\theta+\cot\theta|+C$. We can fix this by grabbing a $i$ from the arbitrary constant:</p>
+<p>$$
+\begin{aligned}
+\ln\left|\frac{e^{i\theta}-1}{e^{i\theta}+1}\right| +C&= \ln\left|\frac{e^{i\theta}-1}{e^{i\theta}+1}\right|-\ln i +C\\
+&=-\ln^{-1}\left|\frac{e^{i\theta}-1}{e^{i\theta}+1}\right|-\ln i+C\\
+&=-\ln\left|\frac{e^{i\theta}+1}{e^{i\theta}-1}\right|-\ln i+C\\
+&=-\ln\left|\frac{ie^{i\theta}+1}{e^{i\theta}-1}\right|+C\\
+&=-\ln\left|\frac{i(e^{i\theta}+1)^2}{(e^{i\theta}-1)(e^{i\theta}+1)}\right|+C\\
+&=-\ln\left|\frac{e^{2i\theta}+1+2e^{i\theta}}{\frac1i(e^{2i\theta}-1)}\right|+C\\
+&=-\ln\left|\frac{e^{i\theta}+e^{-i\theta}+2}{\frac1i(e^{i\theta}-e^{-i\theta})}\right|+C\\
+&=-\ln\left|\frac{\frac{e^{i\theta}+e^{-i\theta}}2+1}{\frac{e^{i\theta}-e^{-i\theta}}{2i}}\right|+C\\
+&=-\ln\left|\frac{\cos\theta+1}{\sin\theta}\right|+C\\
+&=-\ln|\csc\theta+\cot\theta|+C
+\end{aligned}
+$$</p>
+<p>And we are done!</p>
+
+</div>
+<div class='purplebox foot-box'>
+<i>
+Last updated June 6, 2023 by 
+<a href='index.html'>
+Fang Ling
+</a>
+.
+</i>
+</div>
+<br>
+<div class='footer'>
+Made with ♡
+<a href='index.html'>
+by Fang Ling
+</a>
+<a href='https://github.com/fang-ling/zyy'>
+zyy v0.1.2
+</a>
+<span>
+Build: 11d
+</span>
+<br>
+Blog theme is highly inspired
+<a href='https://erikdemaine.org'>
+by Prof. Erik Demaine
+</a>
+<p class='copyright'>
+© 2018-2023 Fang Ling
+</p>
+</div>
+</body>
+</html>
