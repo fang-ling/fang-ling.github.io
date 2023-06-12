@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta content='width=device-width initial-scale=1' name='viewport'>
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'>
+<link type='text/css' href='style.css' rel='stylesheet'>
+<title>
+Methods of Integration
+</title>
+<!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1 class='title-text'>
+<strong>
+Methods of Integration
+</strong>
+</h1>
+<div class='purplebox head-box'>
+Undergraduate
+&nbsp;&bull;&nbsp;
+Guitar Player
+&nbsp;&bull;&nbsp;
+<a href='https://github.com/fang-ling'>
+GitHub
+</a>
+</div>
+<div class='page-container'>
+<h2>The Method of Substitution</h2>
+<ul>
+<li>Example: Find $\int xe^{-x^2}dx$.</li>
+<li>Solution: $\int xe^{-x^2}dx=-\frac12\int e^{-x^2}d(-x^2)=\frac12e^{-x^2}+C$</li>
+</ul>
+<h2>Trigonometric Substitution</h2>
+<p>An integral involving one of the radical expressions $\sqrt{a^2-x^2}$,$\sqrt{a^2+x^2}$,$\sqrt{x^2-a^2}$ (where $a$ is a positive constant) can often be transformed into a familiar trigonometric integral by using a suitable trigonometric substitution. There are three cases, which depend on the trigonometric identities
+$$\begin{aligned}1-\sin^2\theta=\cos^2\theta\\
+1+\tan^2\theta=\sec^2\theta\\
+\sec^2\theta-1=\tan^2\theta\end{aligned}$$</p>
+<p>For example:
+$$
+\begin{aligned}
+\int\frac{\sqrt{x^2-a^2}}x dx&\stackrel{x = a\sec\theta,dx=a\sec\theta\tan\theta d\theta}{=}\int\frac{a\tan\theta}{a\sec\theta}\times a\sec\theta\tan\theta d\theta\\&=a\int\tan^2\theta d\theta\\&=a\int(\sec^2\theta-1)d\theta\\&=a\tan\theta-a\theta+C\\&=\sqrt{x^2-a^2}-a\arctan\frac{\sqrt{x^2-a^2}}a+C
+\end{aligned}$$</p>
+
+</div>
+<div class='purplebox foot-box'>
+<i>
+Last updated June 11, 2023 by 
+<a href='index.html'>
+Fang Ling
+</a>
+.
+</i>
+</div>
+<br>
+<div class='footer'>
+Made with ♡
+<a href='index.html'>
+by Fang Ling
+</a>
+<a href='https://github.com/fang-ling/zyy'>
+zyy v0.1.3
+</a>
+<span>
+Build: 12a
+</span>
+<br>
+Blog theme is highly inspired
+<a href='https://erikdemaine.org'>
+by Prof. Erik Demaine
+</a>
+<p class='copyright'>
+© 2018-2023 Fang Ling
+</p>
+</div>
+</body>
+</html>

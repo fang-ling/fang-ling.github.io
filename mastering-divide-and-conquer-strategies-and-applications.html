@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta content='width=device-width initial-scale=1' name='viewport'>
+<link type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet'>
+<link rel='stylesheet' type='text/css' href='style.css'>
+<title>
+Mastering Divide-and-Conquer: Strategies and Applications
+</title>
+<!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel='stylesheet' type='text/css' href='gist-embed.css'>
+</head>
+<body>
+<h1 class='title-text'>
+<strong>
+Mastering Divide-and-Conquer: Strategies and Applications
+</strong>
+</h1>
+<div class='purplebox head-box'>
+Undergraduate
+&nbsp;&bull;&nbsp;
+Guitar Player
+&nbsp;&bull;&nbsp;
+<a href='https://github.com/fang-ling'>
+GitHub
+</a>
+</div>
+<div class='page-container'>
+<p>In divide-and-conquer, we solve a problem recursively, applying three steps at each level of the recursion:</p>
+<ul>
+<li><strong>Divide</strong> the problem into a number of subproblems that are smaller instances of the same problem.</li>
+<li><strong>Conquer</strong> the subproblems by solving them recursively, If the subproblem sizes are small enough, however, just solve the subproblems in a straightforward manner.</li>
+<li><strong>Combine</strong> the solutions to the subproblems into the solution for the original problem.</li>
+</ul>
+<h2>The maximum-subarray problem</h2>
+<p>Given an array of $n$ integers, find the contiguous subarray with the largest sum. (This problem is interesting only when the array contains some negative numbers. If all the array elements were nonnegative, then this problem would present no challenge, since the entire array would give the largest sum.)</p>
+<p>For example, given the array $[-2, 1, -3, 4, -1, 2, 1, -5, 4]$, the contiguous subarray with the largest sum is $[4, -1, 2, 1]$, which has a sum of $6$.</p>
+<p>Let's think about how we can solve the maximum-subarray problem using the divide-and-conquer technique. Suppose we want to find a maximum subarray of the subarray $A[low...high]$. Divide-and-conquer suggests that we divide the subarray into two subarrays of as equal size as possible. That is, we find a midpoint, say $mid$, of the subarray, and consider the subarrays $A[low...mid]$ and $A[mid + 1...high]$. Any contiguous subarray $A[i...j]$ of $A[low...high]$ must lie in exactly one of the following places:</p>
+<ul>
+<li>entirely in the subarray $A[low...mid]$, so that $low\leq i\leq j\leq mid$,</li>
+<li>entirely in the subarray $A[mid + 1...high]$, so that $mid&lt;i\leq j\leq high$, or</li>
+<li>crossing the midpoint, so that $low\leq i\leq mid&lt;j\leq high$.</li>
+</ul>
+<p>We can find maximum subarrays of $A[low...mid]$ and $A[mid+1...high]$ recursively, beacause these two subproblems are smaller instances of the problem of finding a maximum subarray. Thus, all that is left to do is find a maximum subarray that crosses the midpoint, and take a subarray with the largest sum of the three.</p>
+<p>Any subarray crossing the midpoint is itself make of two subarrays $A[i...mid]$ and $A[mid+1...j]$, where $low\leq i\leq mid$ and $mid&lt;j\leq high$. Therefore, we just need to find maximum subarrays of the form $A[i ...mid]$ and $A[mid+1...j]$ and then combine them. The function <code>find_max_crossing_subarray</code> takes as input the array <code>A</code> and the indices <code>low</code>, <code>mid</code> and <code>high</code>, and it returns a tuple containing the indices demarcating a maximum subarray that crosses the midpoint, along with the sum of the values in a maximum subarray.</p>
+<div class='gist'><div class='gist-file' translate='no'><div class='gist-data'><div><div class='file my-2'><div class='Box-body p-0 blob-wrapper data' itemprop='text'><div class='js-check-bidi js-blob-code-container blob-code-content'><table class='highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file'><tbody><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='1'></td><td class='blob-code blob-code-inner js-file-line'>func find_max_crossing_subarray(</td></tr><tr><td data-line-number='2' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>  _ A : [Int],</td></tr><tr><td data-line-number='3' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>  _ low : Int,</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='4'></td><td class='blob-code blob-code-inner js-file-line'>  _ mid : Int,</td></tr><tr><td data-line-number='5' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>  _ high : Int</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='6'></td><td class='blob-code blob-code-inner js-file-line'>) -&gt; (Int, Int, Int) {</td></tr><tr><td data-line-number='7' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    var max_left = 0</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='8'></td><td class='blob-code blob-code-inner js-file-line'>    var max_right = 0</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='9'></td><td class='blob-code blob-code-inner js-file-line'>    var left_sum = Int.min</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='10'></td><td class='blob-code blob-code-inner js-file-line'>    var right_sum = Int.min</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='11'></td><td class='blob-code blob-code-inner js-file-line'></></td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='12'></td><td class='blob-code blob-code-inner js-file-line'>    var sum = 0</td></tr><tr><td data-line-number='13' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    for i in (low ... mid).reversed() {</td></tr><tr><td data-line-number='14' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        sum += A[i]</td></tr><tr><td data-line-number='15' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        if sum &gt; left_sum {</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='16'></td><td class='blob-code blob-code-inner js-file-line'>            left_sum = sum</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='17'></td><td class='blob-code blob-code-inner js-file-line'>            max_left = i</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='18'></td><td class='blob-code blob-code-inner js-file-line'>        }</td></tr><tr><td data-line-number='19' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    }</td></tr><tr><td data-line-number='20' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    sum = 0</td></tr><tr><td data-line-number='21' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    for j in mid + 1 ... high {</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='22'></td><td class='blob-code blob-code-inner js-file-line'>        sum += A[j]</td></tr><tr><td data-line-number='23' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        if sum &gt; right_sum {</td></tr><tr><td data-line-number='24' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>            right_sum = sum</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='25'></td><td class='blob-code blob-code-inner js-file-line'>            max_right = j</td></tr><tr><td data-line-number='26' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        }</td></tr><tr><td data-line-number='27' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    }</td></tr><tr><td data-line-number='28' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    return (max_left, max_right, left_sum + right_sum)</td></tr><tr><td data-line-number='29' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>}</td></tr></tbody></table></div></div></div></div></div><div class='gist-meta'>Rendered with ♡ by <a href='https://github.com/fang-ling/zyy'>zyy</a></div></div></div>
+<p>We claim that the call <code>find_max_crossing_subarray</code> takes $\Theta(n)$ time. With a linear-time  <code>find_max_crossing_subarray</code>  function in hand, we can write code for a divide-and-conquer algorithm to solve the maximum-subarray problem:</p>
+<div class='gist'><div translate='no' class='gist-file'><div class='gist-data'><div><div class='file my-2'><div itemprop='text' class='Box-body p-0 blob-wrapper data'><div class='js-check-bidi js-blob-code-container blob-code-content'><table class='highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file'><tbody><tr><td data-line-number='1' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>func find_maximum_subarray(</td></tr><tr><td data-line-number='2' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>  _ A : [Int],</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='3'></td><td class='blob-code blob-code-inner js-file-line'>  _ low : Int,</td></tr><tr><td data-line-number='4' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>  _ high : Int</td></tr><tr><td data-line-number='5' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>) -&gt; (Int, Int, Int) {</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='6'></td><td class='blob-code blob-code-inner js-file-line'>    if low == high { /* Base case: only one element */</td></tr><tr><td data-line-number='7' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        return (low, high, A[low])</td></tr><tr><td data-line-number='8' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    } else {</td></tr><tr><td data-line-number='9' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        let mid = (low + high) / 2</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='10'></td><td class='blob-code blob-code-inner js-file-line'>        let left = find_maximum_subarray(A, low, mid)</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='11'></td><td class='blob-code blob-code-inner js-file-line'>        let right = find_maximum_subarray(A, mid + 1, high)</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='12'></td><td class='blob-code blob-code-inner js-file-line'>        let cross = find_max_crossing_subarray(A, low, mid, high)</td></tr><tr><td data-line-number='13' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'></></td></tr><tr><td data-line-number='14' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>        if left.2 &gt;= right.2 && left.2 &gt;= cross.2 {</td></tr><tr><td data-line-number='15' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>            return left</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='16'></td><td class='blob-code blob-code-inner js-file-line'>        } else if right.2 &gt;= left.2 && right.2 &gt;= cross.2 {</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='17'></td><td class='blob-code blob-code-inner js-file-line'>            return right</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='18'></td><td class='blob-code blob-code-inner js-file-line'>        } else {</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='19'></td><td class='blob-code blob-code-inner js-file-line'>            return cross</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='20'></td><td class='blob-code blob-code-inner js-file-line'>        }</td></tr><tr><td data-line-number='21' class='blob-num js-line-number js-code-nav-line-number js-blob-rnum'></td><td class='blob-code blob-code-inner js-file-line'>    }</td></tr><tr><td class='blob-num js-line-number js-code-nav-line-number js-blob-rnum' data-line-number='22'></td><td class='blob-code blob-code-inner js-file-line'>}</td></tr></tbody></table></div></div></div></div></div><div class='gist-meta'>Rendered with ♡ by <a href='https://github.com/fang-ling/zyy'>zyy</a></div></div></div>
+<p>Related problem: <a href="https://leetcode.com/problems/maximum-subarray/">LeetCode 53. Maximum Subarray</a>.</p>
+<p>Next we set up a recurrence that describes the running time of the recursive function:</p>
+<p>$$T(n)=\begin{cases}\Theta(1)&n=1,\\2T(n/2)+\Theta(n)&n&gt;1.\end{cases}$$</p>
+<p>As we shall see from the method mentioned in the following section, this recurrence has the solution $T(n)=\Theta(n\lg n)$.</p>
+
+</div>
+<div class='purplebox foot-box'>
+<i>
+Last updated June 12, 2023 by 
+<a href='index.html'>
+Fang Ling
+</a>
+.
+</i>
+</div>
+<br>
+<div class='footer'>
+Made with ♡
+<a href='index.html'>
+by Fang Ling
+</a>
+<a href='https://github.com/fang-ling/zyy'>
+zyy v0.1.3
+</a>
+<span>
+Build: 12a
+</span>
+<br>
+Blog theme is highly inspired
+<a href='https://erikdemaine.org'>
+by Prof. Erik Demaine
+</a>
+<p class='copyright'>
+© 2018-2023 Fang Ling
+</p>
+</div>
+</body>
+</html>
