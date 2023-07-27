@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link rel='stylesheet' type='text/css' href='style.css'><title>Integrals of Multivariable Functions</title><!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><h1 class='title-text'><strong>Integrals of Multivariable Functions</strong></h1><div class='purplebox head-box'>Undergraduate&nbsp;&nbsp;&bull;&nbsp;&nbsp;Guitar Player&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='gear.html'>Gear</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='https://github.com/fang-ling'>GitHub</a></div><div class='page-container'><p><strong>Example 1</strong>: Let $R$ be the bounded region between $y-x=2$ and $y=x^2$. Find $\iint_R(2x+4y)dA$.</p>
+<p>Solution:</p>
+<ul>
+<li>Step 1: Sketch the region. Solving $y−x = 2$ and $y= x^2$ shows that the line and the parabola intersect at $(−1,1)$ and $(2,4)$. As shown in the following figure.
+<img src="images/integrals-of-multivariable-functions-1.webp" alt="" /></li>
+<li>Step 2: Determine the order. In this example, it's easier to integrate $dy$ first, and then integrate $dx$, rather than doing it in the opposite order.</li>
+<li>Step 3: Find the bounds for the outer integral with respect to $x$.  The smallest $x$-coordinate is $−1$ and the largest $x$-coordinate is $2$. So the outer integral will look like $\int_{x=-1}^{x=2}$.</li>
+<li>Step 4: Find the bounds for the inner integral with respect to $y$. Hold $x$ fixed, and increase $y$. The inner integral goes from the smaller $y$-value to the larger $y$-value. It enters at $y= x^2$ and leaves at $y= x+ 2$, so the iterated integral is $\int_{x=-1}^{x=2}\int_{y=x^2}^{y=x+2}(2x+4y)dydx$.</li>
+<li>Step 5: Evaluate the inner integral first, treating $x$ as constant. The result will be a function of $x$.
+$$\begin{aligned}\int_{y=x^2}^{y=x+2}(2x+4y)dy&=[2xy+2y^2]_{x^2}^{x+2}\\&=-2x^4-2x^3+4x^2+12x+8\end{aligned}$$</li>
+<li>Step 6: Then evaluate the outer integral, which is just a definite integral of a 1-variable function of $x$. The answer is $\frac{333}{10}$.</li>
+</ul>
+<h2>Change of variables in double integrals</h2>
+<p><strong>Definitions</strong>:</p>
+<ul>
+<li>Transformations. View $(u,v)$ as input variables, and $(x,y)$ as output variables: $(x,y)=F(u,v)$.</li>
+<li>Jacobian determinant. The Jacobian determinant of the transformation F is the determinant of the total derivative:
+$$\frac{\partial(x,y)}{\partial(u,v)}:=\det F'(u)=\det
+\begin{bmatrix}x_u&x_v\\y_u&y_v\end{bmatrix}$$</li>
+<li>Area scaling factor. The area scaling factor is the absolute value of the Jacobian determinant:
+$$\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\left|\det\begin{bmatrix}x_u&x_v\\y_u&y_v\end{bmatrix}\right|$$</li>
+</ul>
+<p><strong>Example 2:</strong> Re-express $\iint_Rf(x,y)dxdy$ as a double integral in polar coordinates.</p>
+<ul>
+<li>Step 1: Choose a transformation $x=r\cos\theta, y=r\sin\theta$.</li>
+<li>Step 2: Find the equations of the boundary curves of R in terms of $x,y$.</li>
+<li>Step 3: Rewrite these in terms of $r,\theta$ to find the corresponding region $S$ in polar coordinates.</li>
+<li>Step 4: Compute the Jacobian determinant:
+$$\begin{aligned}\frac{\partial(x,y)}{\partial(r,\theta)}&=\det
+\begin{bmatrix}x_r&x_\theta\\y_r&y_\theta\end{bmatrix}\\&=\det\begin{bmatrix}\cos\theta&-r\sin\theta\\\sin\theta&r\cos\theta\end{bmatrix}\\&=r(\cos^2\theta+\sin^2\theta)\\&=r\end{aligned}$$</li>
+<li>Step 5: Take the absolute value of the Jacobian determinant to get the area scaling factor: $|r|=r$.</li>
+<li>Step 6: Substitute
+$$\begin{aligned}x&=r\cos\theta\\y&=r\sin\theta\\dxdy&=\left|\frac{\partial(x,y)}{\partial(r,\theta)}\right|drd\theta=rdrd\theta\end{aligned}$$
+into the integral, and remember to use the equations of the boundary curves in terms of $r,\theta$ to describe the new region $S$ in polar coordinates, and hence determine the new limits of integration.</li>
+</ul>
+<h2>Sources</h2>
+<ol>
+<li><a href="https://math.mit.edu/~poonen/notes02.pdf">18.02 LECTURE NOTES, FALL 2021</a></li>
+</ol>
+</div><div class='purplebox foot-box'><i>Last updated July 27, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.3</a><span>Build: 14e</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
