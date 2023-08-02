@@ -945,7 +945,11 @@
     color:#5d6c79
 }
 
-.gist .pl-c1, .gist .pl-s .pl-v {
+.gist .pl-c1 {
+    color:#1c00cf
+}
+
+.gist .pl-s .pl-v {
     color:#005cc5
 }
 
