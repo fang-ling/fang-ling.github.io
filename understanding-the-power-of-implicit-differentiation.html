@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link type='text/css' rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='style.css' rel='stylesheet' type='text/css'><title>Understanding the Power of Implicit Differentiation</title><!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><h1 class='title-text'><strong>Understanding the Power of Implicit Differentiation</strong></h1><div class='purplebox head-box'>Undergraduate&nbsp;&nbsp;&bull;&nbsp;&nbsp;Guitar Player&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='gear.html'>Gear</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='https://github.com/fang-ling'>GitHub</a></div><div class='page-container'><p><strong>Example</strong>: Find $(\arcsin x)'$.</p>
+<p>Solution:</p>
+<p>Let $y=\arcsin x$, then $x=\sin y$, and differentiate both sides, we get:</p>
+<p>$$\begin{aligned}\cos y dy&=dx\\\frac{dy}{dx}&=\frac1{\cos y}\end{aligned}$$</p>
+<p>We can draw a right triangle to help us solve for $y$:</p>
+<p><img src="images/understanding-the-power-of-implicit-differentiation-1.webp" alt="" /></p>
+<p>This yields:</p>
+<p>$$\frac{dy}{dx}=\frac1{\sqrt{1-x^2}}$$</p>
+</div><div class='purplebox foot-box'><i>Last updated August 3, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.3</a><span>Build: 17a</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
