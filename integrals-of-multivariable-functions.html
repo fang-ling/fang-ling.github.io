@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' type='text/css'><link rel='stylesheet' href='style.css' type='text/css'><title>Integrals of Multivariable Functions</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link rel='stylesheet' type='text/css' href='style.css'><title>Integrals of Multivariable Functions</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -7,7 +7,8 @@
 MathJax = {
   tex: {
     inlineMath: [['$', '$']],
-    displayMath: [['$$', '$$']]
+    displayMath: [['$$', '$$']],
+    macros: {      phi:"\\varphi"    }
   }
 };
 </script>
@@ -54,6 +55,8 @@ into the integral, and remember to use the equations of the boundary curves in t
 <p>In algebra, we can compute the area by taking the cross product of the two vectors. (Remember that $\hat{a}\times\hat{a}=0$ and $\hat{a}\times\hat{b}=-\hat{b}\times\hat{a}$):</p>
 <p>$$\begin{aligned}dx\times dy&=(\cos\theta dr-r\sin\theta d\theta)\times(\sin\theta dr+r\cos\theta d\theta)\\&=\cos\theta\sin\theta(dr\times dr)-r\sin^2\theta (d\theta\times dr)+\\&r\cos^2\theta (dr\times d\theta)-r\sin\theta\cos\theta(d\theta\times d\theta)\\&=r(\sin^2\theta+\cos^2\theta)dr\times d\theta\end{aligned}$$</p>
 <p><strong>Example 3</strong>: Re-express $\iiint_{T}f(x,y,z)dxdydz$ as a triple integral in cylindrical coordinates.</p>
+<p>You can see the cylindrical coordinates in the following picture.</p>
+<p><img src="images/integrals-of-multivariable-functions-2.webp" alt="" /></p>
 <p>To convert from cylindrical coordinates $(r,\theta,z)$ to rectangular coordinates $(x,y,z)$:</p>
 <p>$$\begin{aligned}x&=r\cos\theta\\y&=r\sin\theta\\z&=z\end{aligned}$$</p>
 <p>Then:
@@ -61,6 +64,8 @@ $$\begin{aligned}dx&=\cos\theta dr-r\sin\theta d\theta\\dy&=\sin\theta dr+r\cos\
 <p>The volume element becomes:</p>
 <p>$$\begin{aligned}dV&=dx\times dy\times dz\\&=(\cos\theta dr-r\sin\theta d\theta)\times(\sin\theta dr+r\cos\theta d\theta)\times dz\\&=rdrd\theta dz\end{aligned}$$</p>
 <p><strong>Example 4</strong>: Re-express $\iiint_{T}f(x,y,z)dxdydz$ as a triple integral in spherical coordinates.</p>
+<p>The following figure shows the spherical coordinates.</p>
+<p><img src="images/integrals-of-multivariable-functions-3.webp" alt="" /></p>
 <p>Conversion between spherical coordinates and rectangular coordinates (Recall that $r=\rho\sin\phi$):</p>
 <p>$$\begin{aligned}x&=r\cos\theta=\rho\sin\phi\cos\theta\\y&=r\sin\theta=\rho\sin\phi\sin\theta\\z&=\rho\cos\phi\end{aligned}$$</p>
 <p>So
@@ -68,8 +73,29 @@ $$\begin{aligned}dx&=\sin\phi\cos\theta d\rho+\rho\cos\theta\cos\phi d\phi-\rho\
 <p>We now have</p>
 <p>$$\begin{aligned}dV&=dx\times dy\times dz\\&=(\sin\phi\cos\theta d\rho+\rho\cos\theta\cos\phi d\phi-\rho\sin\phi\sin\theta d\theta)\times\\&(\sin\phi\sin\theta d\rho+\rho\sin\theta\cos\phi d\phi+\rho\sin\phi\cos\theta d\theta)\times(\cos\phi d\rho-\rho\sin\phi d\phi)\\&=(\rho\sin\phi\cos\phi\sin\theta\cos\theta d\phi d\rho-\rho\sin^2\phi\sin^2\theta d\theta d\rho-\\&\rho\sin\phi\cos\phi\sin\theta\cos\theta d\phi d\rho-\rho^2\sin\phi\sin^2\theta\cos\phi d\theta d\phi+\\&\rho\sin^2\phi\cos^2\theta d\rho d\theta+\rho^2\sin\phi\cos^2\theta\cos\phi d\phi d\theta)\times(\cos\phi d\rho-\rho\sin\phi d\phi)\\&=(\rho\sin^2\phi\sin^2\theta d\rho d\theta+\rho^2\sin\phi\sin^2\theta\cos\phi d\phi d\theta+\\&\rho\sin^2\phi\cos^2\theta d\rho d\theta+\rho^2\sin\phi\cos^2\theta\cos\phi d\phi d\theta)\times(\cos\phi d\rho-\rho\sin\phi d\phi)\\&=(\rho\sin^2\phi d\rho d\theta+\rho^2\sin\phi\cos\phi d\phi d\theta)\times(\cos\phi d\rho-\rho\sin\phi d\phi)\\&=\rho^2\sin\phi\cos^2\phi d\phi d\theta d\rho-\rho^2\sin^3\phi d\rho d\theta d\phi\\&=\rho^2\sin\phi(\sin^2\phi+\cos^2\phi) d\rho d\phi d\theta\\&=\rho^2\sin\phi d\rho d\phi d\theta\end{aligned}$$</p>
 <p>(Finally done. 🤯)</p>
+<p><strong>Example 5</strong>: Use a triple integral in cylindrical coordinates to find the volume of the sphere $x^2+y^2+z^2=a^2$.</p>
+<p>Solution:</p>
+<p>The cylindrical equation of the sphere is $r^2+z^2=a^2$, so the equation of the upper hemisphere is $z=\sqrt{a^2-r^2}$.</p>
+<p>Applying symmetry, we have:</p>
+<p>$$\begin{aligned}V&=2\int_0^{2\pi}\int_0^a\int_0^{\sqrt{a^2-r^2}}rdzdrd\theta\\
+&=2\int_0^{2\pi}d\theta\int_0^a r\sqrt{a^2-r^2}dr\\
+&=-\int_0^{2\pi}\left[\frac23(a^2-r^2)^{\frac32}\right]^a_0d\theta\\
+&=\int_0^{2\pi}\frac23a^3d\theta\\
+&=\frac43\pi a^3
+\end{aligned}$$</p>
+<p><strong>Example 6</strong>: Use a triple integral in spherical coordinates to find the volume of the sphere $x^2+y^2+z^2=a^2$.</p>
+<p>Solution:</p>
+<p>The equation of this sphere is $\rho=a$.</p>
+<p>Then:</p>
+<p>$$\begin{aligned}V&=\int_0^{2\pi}\int_0^\pi\int_0^a\rho rd\rho d\phi d\theta\\
+&=\int_0^{2\pi}\int_0^\pi\int_0^a\rho^2\sin\phi d\rho d\phi d\theta\\
+&=\int_0^{2\pi}\int_0^\pi\frac{a^3}3\sin\phi d\phi d\theta\\
+&=\int_0^{2\pi}\frac{a^3}3[-\cos\phi]_0^\pi d\theta\\
+&=\frac{a^3}3\int_0^{2\pi}2d\theta\\
+&=\frac43\pi a^3
+\end{aligned}$$</p>
 <h2>Sources</h2>
 <ol>
 <li><a href="https://math.mit.edu/~poonen/notes02.pdf">18.02 LECTURE NOTES, FALL 2021</a></li>
 </ol>
-</div><div class='purplebox foot-box'><i>Last updated July 31, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.3</a><span>Build: 1b0</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated September 26, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.3</a><span>Build: 1b9</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
