@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'><link href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' type='text/css' rel='stylesheet'><link type='text/css' href='style.css' rel='stylesheet'><title>Line & Surface Integrals</title><!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    macros: {      phi:"\\varphi"    }
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><h1 class='title-text'><strong>Line & Surface Integrals</strong></h1><div class='purplebox head-box'>Undergraduate&nbsp;&nbsp;&bull;&nbsp;&nbsp;Guitar Player&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='gear.html'>Gear</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='https://github.com/fang-ling'>GitHub</a></div><div class='page-container'><h2>1 Line integral with respect to arc length</h2>
+<p>The line integral of $F(x,y)$ along $C$ is defined by:
+$$\int_CF ds$$</p>
+<p>If a curve is defined by parametric equations $x=x(t)$ and $y=y(t)$, then
+$$ds=\frac{\sqrt{(dx)^2+(dy)^2}}{dt}dt=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$$</p>
+<p><strong>Example 1</strong>: Evaluate $\int_C\exp(\sqrt{x^2+y^2})ds$, where $C$ is the curve shown below.</p>
+<p><img src="images/line-and-surface-integrals-1.webp" alt="" /></p>
+<p>We first need a parameterization of the $C_1,C_2,C_3$. This is given by:
+$$\begin{aligned}C_1&=\left\{\begin{aligned}x&=t\\y&=0\end{aligned}\quad(0\leq t\leq a)\right.\\
+C_2&=\left\{\begin{aligned}x&=a\cos t\\y&=a\sin t\end{aligned}\quad(0\leq t\leq\frac\pi4)\right.\\
+C_3&=\left\{\begin{aligned}x&=t\\y&=t\end{aligned}\quad(0\leq t\leq\frac{\sqrt2}2a)\right.\end{aligned}$$</p>
+<p>Now, we need the derivatives of the parametric equations and let’s compute $ds$s.
+$$\begin{aligned}ds_1&=\sqrt{1^2+0^2}dt=dt\\
+ds_2&=\sqrt{(-a\sin t)^2+(a\cos t)^2}dt=adt\\
+ds_3&=\sqrt{1^2+1^2}dt=\sqrt2dt\end{aligned}$$</p>
+<p>The line integral is then:</p>
+<p>$$\begin{aligned}\int_C\exp(\sqrt{x^2+y^2})ds&=\int_{C_1}\exp(\sqrt{t^2+0^2})dt+\\
+&\int_{C_2}\exp(\sqrt{(a\cos t)^2+(a\sin t)^2})adt+\\
+&\int_{C_3}\exp(\sqrt{t^2+t^2})\sqrt2dt\\
+&=\int_0^ae^tdt+\int_0^{\frac\pi4}e^aadt+\int_0^{\frac{\sqrt{2}}{2}a}e^{\sqrt{2}t}\sqrt2dt\\
+&=e^a-1+\frac{ae^a\pi}4+e^a-1\\
+&=(2+\frac{a\pi}4)e^a-2\end{aligned}$$</p>
+</div><div class='purplebox foot-box'><i>Last updated October 2, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1c5</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
