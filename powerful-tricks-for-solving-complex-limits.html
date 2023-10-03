@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet'><link rel='stylesheet' type='text/css' href='style.css'><title>Powerful Tricks for Solving Complex Limits</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet'><link href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet' type='text/css'><link type='text/css' href='style.css' rel='stylesheet'><title>Powerful Tricks for Solving Complex Limits</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -69,14 +69,14 @@ $$\begin{aligned}
 Since:
 $$e^x\approx \frac{e^0}{0!}x^0+\frac{e^0}{1!}x^1$$</p>
 <p>Now we get:</p>
-<p>$$\begin{aligned}\lim_{x\to0}\frac{(1+x)^{\frac3x}-e^3}x&amp;=\lim_{x\to0}\frac{e^{\frac3x\ln(1+x)}-e^3}x\
-&amp;=\lim_{x\to0}\frac{e^3\left(e^{\frac3x\ln(1+x)-3}-1\right)}x\
-\text{by $e^x-1\approx x$, we get:}\
-&amp;=e^3\lim_{x\to0}\frac{\frac3x\ln(1+x)-3}x\
-&amp;=e^3\lim_{x\to0}\frac{3\ln(1+x)-3x}{x^2}\
-&amp;=e^3\lim_{x\to0}\frac{\frac3{1+x}-3}{2x}\
-&amp;=3e^3\lim_{x\to0}\frac{-\frac1{(1+x)^2}}2\
-&amp;=-\frac32e^3
+<p>$$\begin{aligned}\lim_{x\to0}\frac{(1+x)^{\frac3x}-e^3}x&=\lim_{x\to0}\frac{e^{\frac3x\ln(1+x)}-e^3}x\\
+&=\lim_{x\to0}\frac{e^3\left(e^{\frac3x\ln(1+x)-3}-1\right)}x\\
+\text{by $e^x-1\approx x$, we get:}\\
+&=e^3\lim_{x\to0}\frac{\frac3x\ln(1+x)-3}x\\
+&=e^3\lim_{x\to0}\frac{3\ln(1+x)-3x}{x^2}\\
+&=e^3\lim_{x\to0}\frac{\frac3{1+x}-3}{2x}\\
+&=3e^3\lim_{x\to0}\frac{-\frac1{(1+x)^2}}2\\
+&=-\frac32e^3
 \end{aligned}$$</p>
 <h2>4 Limits of series</h2>
 <p>There are two basic methods: using the <a href="https://en.wikipedia.org/wiki/Squeeze_theorem">Squeeze theorem</a> or calculating it.</p>
@@ -111,4 +111,4 @@ $$\begin{aligned}\lim_{n\to\infty}\sum_{k=1}^n\frac1{4k^2-1}&=\lim_{n\to\infty}\
 &=\frac12\lim_{n\to\infty}\left(1-\frac1{2n+1}\right)\\
 &=\frac12
 \end{aligned}$$</p>
-</div><div class='purplebox foot-box'><i>Last updated September 14, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1c5</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated September 14, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1c7</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
