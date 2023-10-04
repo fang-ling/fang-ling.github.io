@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' type='text/css'><link href='style.css' rel='stylesheet' type='text/css'><title>Line & Surface Integrals</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'><link type='text/css' rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='style.css' type='text/css' rel='stylesheet'><title>Line & Surface Integrals</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -18,7 +18,7 @@ MathJax = {
 $$\int_CF ds$$</p>
 <p>If a curve is defined by parametric equations $x=x(t)$ and $y=y(t)$, then
 $$ds=\frac{\sqrt{(dx)^2+(dy)^2}}{dt}dt=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}dt$$</p>
-<p><strong>Example 1</strong>: Evaluate $\int_C\exp(\sqrt{x^2+y^2})ds$, where $C$ is the curve shown below.</p>
+<p><strong>Example 1.1</strong>: Evaluate $\int_C\exp(\sqrt{x^2+y^2})ds$, where $C$ is the curve shown below.</p>
 <p><img src="images/line-and-surface-integrals-1.webp" alt="" /></p>
 <p>We first need a parameterization of the $C_1,C_2,C_3$. This is given by:
 $$\begin{aligned}C_1&=\left\{\begin{aligned}x&=t\\y&=0\end{aligned}\quad(0\leq t\leq a)\right.\\
@@ -42,9 +42,20 @@ The parametric representation $x=x(t)$ and $y=y(t), t_1\leq t\leq t_2$, for the 
 $$\begin{aligned}\int_C\textbf{F}\cdot d\textbf{R}&=\int_CM(x,y)dx+N(x,y)dy\\
 &=\int_{t_1}^{t_2}\left(M(x,y)\frac{dx}{dt}+N(x,y)\frac{dy}{dt}\right)dt\end{aligned}$$
 This is an ordinary single integral with $t$ as the variable of integration, and it can be evaluated in the usual way.</p>
-<p><strong>Example 2</strong>: Evaluate $\int_C(x^2+y^2)dx+(x^2-y^2)dy$, where $C$ is the curve shown below.</p>
-<p><img src="" alt="" /></p>
+<p><strong>Example 2.1</strong>: Evaluate $\int_C(x^2+y^2)dx+(x^2-y^2)dy$, where $C$ is the curve shown below.</p>
+<p><img src="images/line-and-surface-integrals-2.webp" alt="" /></p>
 <p>We may parametrize the curve in any way that seems convenient. The simplest parametric representation of this curve is:
 $$\begin{aligned}C_1&=\left\{\begin{aligned}x&=t\\y&=t\end{aligned}\right.\quad,(0\leq t\leq1)\\
 C_2&=\left\{\begin{aligned}x&=t\\y&=-t+2\end{aligned}\right.\quad,(1\leq t\leq2)\end{aligned}$$</p>
-</div><div class='purplebox foot-box'><i>Last updated October 3, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1c9</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+<p>Here we have:
+$$\begin{aligned}C_1&:\left\{\begin{aligned}dx&=dt\\dy&=dt\end{aligned}\right.\\
+C_2&:\left\{\begin{aligned}dx&=dt\\dy&=-dt\end{aligned}\right.\end{aligned}$$</p>
+<p>So the line integral is:
+$$\begin{aligned}I_1=\int_{C_1}(t^2+t^2)dt+0=2\int_0^1t^2dt=\frac23\end{aligned}$$
+$$\begin{aligned}I_2&=\int_{C_2}\left(t^2+(-t+2)^2\right)dt-\left(t^2-(-t+2)^2\right)dt\\
+&=2\int_1^2(-t+2)^2dt\\
+&=-2\int_1^2(-t+2)^2d(-t+2)\\
+&=-2\times\left[\frac{-t+2}3\right]_1^2\\
+&=\frac23\end{aligned}$$
+$$I=I_1+I_2=\frac43$$</p>
+</div><div class='purplebox foot-box'><i>Last updated October 4, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1cc</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
