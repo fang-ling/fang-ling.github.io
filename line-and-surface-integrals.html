@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' type='text/css'><link href='style.css' type='text/css' rel='stylesheet'><title>Line & Surface Integrals</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' type='text/css'><link type='text/css' rel='stylesheet' href='style.css'><title>Line & Surface Integrals</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -90,6 +90,66 @@ Next we can calculate the integral:</p>
 &=\sqrt3\left[2\theta-\frac{\cos\theta}3+\frac{\sin\theta}3\right]_0^{2\pi}\\
 &=\sqrt3\left(4\pi-1+0-0+1-0\right)\\
 &=4\sqrt3\pi\end{aligned}$$</p>
+<h2>4 Surface integrals of vector fields</h2>
+<p>Given a vector field $\textbf F(x,y,z)$ with unit normal vector $\textbf n$, then the surface integral of $\textbf F$ over the surface $S$ is given by:
+$$\iint_S\textbf F\cdot d\textbf S=\iint_S\textbf F\cdot\textbf ndS$$</p>
+<p>If we parameterize a surface given by $z=g(x,y)$ as a vector function as mention before, we will find that:
+$$\textbf n=\frac{\textbf G_x\times\textbf G_y}{|\textbf G_x\times\textbf G_y|}$$</p>
+<p>Then:
+$$\begin{aligned}\iint_S\textbf F\cdot d\textbf S&=\iint_S\textbf F\cdot\textbf ndS\\
+&=\iint_D\textbf F\cdot\frac{\textbf G_x\times\textbf G_y}{|\textbf G_x\times\textbf G_y|}|\textbf G_x\times\textbf G_y|dA\\
+&=\iint_D\textbf F\cdot(\textbf G_x\times\textbf G_y)dA\end{aligned}$$</p>
+<p><strong>Example 4.1</strong>: Evaluate $\iint_S\textbf F\cdot d\textbf S$, where $\textbf F=xz^2\textbf i+y^2\textbf j+zx\textbf k$ and $S$ is the surface given by $z=\sqrt{x^2+y^2},1\leq z\leq 2$.</p>
+<p><img src="images/line-and-surface-integrals-5.webp" alt="" /></p>
+<p>We first parameterize $S$ into a vector form:
+$$G(x,y)=x\textbf i+y\textbf j+\sqrt{x^2+y^2}\textbf k$$
+And we have:
+$$\begin{aligned}G_x=(1,0,\frac x{\sqrt{x^2+y^2}})\\
+G_y=(0,1,\frac y{\sqrt{x^2+y^2}})\end{aligned}$$</p>
+<p>Then:
+$$\begin{aligned}G_x\times G_y&=\begin{vmatrix}\textbf i&\textbf j&\textbf k\\
+1&0&\frac x{\sqrt{x^2+y^2}}\\
+0&1&\frac y{\sqrt{x^2+y^2}}\end{vmatrix}\\
+&=-\frac x{\sqrt{x^2+y^2}}\textbf i-\frac y{\sqrt{x^2+y^2}}\textbf j+\textbf k\end{aligned}$$</p>
+<p>Next, we can find that $D$ is an annulus or a ring lying in the $xy$-plane with an inner radius of $1$ and an outer radius of $4$.</p>
+<p>$$\begin{aligned}\iint_S\textbf F\cdot d\textbf S&=\iint_S\textbf F\cdot\textbf ndS\\
+&=\iint_D(xz^2,y^2,zx)\cdot(-\frac x{\sqrt{x^2+y^2}},-\frac y{\sqrt{x^2+y^2}},1)dA\\
+&=\iint_D\left(-\frac {x^2z^2}{\sqrt{x^2+y^2}}-\frac {y^3}{\sqrt{x^2+y^2}}+zx\right)dA\\
+&=\iint_D\left(-x^2\sqrt{x^2+y^2}-\frac{y^3}{\sqrt{x^2+y^2}}+x\sqrt{x^2+y^2}\right)dA\\
+&=\int_0^{2\pi}d\theta\int_1^2\left(-r^3\cos^2\theta-r^2\sin^3\theta+r^2\cos\theta\right)rdr\\
+&=\int_0^{2\pi}d\theta\left[-\frac15r^5\cos^2\theta-\frac14r^4\sin^3\theta+\frac14r^4\cos\theta\right]_1^2\\
+&=\int_0^{2\pi}d\theta\left(-\frac1532\cos^2\theta-4\sin^3\theta+4\cos\theta+\frac15\cos^2\theta+\frac14\sin^3\theta+\frac14\cos\theta\right)\\
+&=-\frac{32}5\pi+\frac15\pi\\
+&=-\frac{31}5\pi
+\end{aligned}$$</p>
+<h2>5 Line integral of vector fields along closed curve</h2>
+<blockquote>
+<p>Stoke's Theorem:</p>
+<p>If $S$ is a surface in space with boundary curve $C$, then the circulation of a vector field $\textbf F=(P,Q,R)$ around $C$ is equal to the integral over $S$ of the normal component of the curl of $\textbf F$,
+$$\begin{aligned}\oint_C\textbf F\cdot d\textbf R&=\iint_S\textup{curl }\textbf Fd\textbf S\\&=\iint_S(\nabla\times\textbf F)\cdot \textbf ndS\\&=\iint_S(\nabla\times\textbf F)\cdot(G_x\times G_y)dA\end{aligned}$$</p>
+</blockquote>
+<p>If the surface $S$ is a region lying in the $xy$-plane, then $\textbf n=\textbf k$, $z=0$ and we see that:
+$$\textbf G(x,y)=x\textbf i+y\textbf j+0\textbf k$$
+$$G_x\times G_y=(0,0,1)$$
+$$\begin{aligned}\nabla\times\textbf F&=\begin{vmatrix}\textbf i&\textbf j&\textbf k\\
+\partial/\partial x&\partial/\partial y&\partial/\partial z\\
+P&Q&R\end{vmatrix}\\
+&=\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},-\left(\frac{\partial R}{\partial x}-\frac{\partial P}{\partial z}\right),\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\end{aligned}$$
+$$(\nabla\times\textbf F)\cdot(G_x\times G_y)=\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}$$</p>
+<p>so the Stokes' Theorem reduces to the 2-D Green's Theorem.</p>
+<p><strong>Example 5.1</strong>: Evaluate $\oint_C\textbf F\cdot d\textbf R$, where $\textbf F=\left(\frac{-y}{x^2+y^2},\frac{x}{x^2+y^2}\right)$ and $C$ is $(x+2)^2+(y-2)^2=1$ (ccw).</p>
+<p>$$\begin{aligned}\textup{curl }\textbf F&=\nabla\times\textbf F\\
+&=\begin{vmatrix}\textbf i&\textbf j&\textbf k\\
+\partial/\partial x&\partial/\partial y&\partial/\partial z\\
+-y/(x^2+y^2)&x/(x^2+y^2)&0\end{vmatrix}\\
+&=0\end{aligned}$$</p>
+<p>So $\oint_C\textbf F\cdot d\textbf R=0$.</p>
+<h2>6 Surface integrals of vector fields over closed surface</h2>
+<blockquote>
+<p>Gauss's Theorem:</p>
+<p>The flux of a vector field $\textbf F$ out through a closed surface $S$ equals the integral of the divergence of $\textbf F$ over the region $R$ bounded by $S$,
+$$\begin{aligned}\iint_S\textbf F\cdot d\textbf S&=\iint_S\textbf F\cdot \textbf ndS\\&=\iiint_R\textup{div }\textbf FdV\end{aligned}$$</p>
+</blockquote>
 <h2>External links</h2>
 <p>1: <a href="https://tutorial.math.lamar.edu/Classes/CalcIII/SurfaceIntegrals.aspx">Paul's Online Notes -- Surface Integrals</a></p>
-</div><div class='purplebox foot-box'><i>Last updated October 5, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1d6</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated October 8, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1dd</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
