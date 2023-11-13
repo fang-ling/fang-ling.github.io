@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet'><link type='text/css' href='style.css' rel='stylesheet'><title>Partial Derivatives</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'><link href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet' type='text/css'><link type='text/css' href='style.css' rel='stylesheet'><title>Partial Derivatives</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -23,7 +23,9 @@ MathJax = {
 <li><strong>Property 3</strong>: The length of the vector $\nabla f$ is the maximum rate of increase of $f$.</li>
 <li><strong>Property 4</strong>: The gradient of a function $f(x,y,z)$ at a point $P_0$ is normal to the level surface of $f$ that passes through $P_0$.</li>
 </ul>
-<p><strong>Example 1.1</strong>: Let $z=(1+xy)^y$, find $dz|_{(1,1)}$.</p>
+<h2>2 Total differential</h2>
+<p>$$\begin{aligned}dz&=\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy\\&=\nabla f\cdot(dx,dy)\end{aligned}$$</p>
+<p><strong>Example 2.1</strong>: Let $z=(1+xy)^y$, find $dz|_{(1,1)}$.</p>
 <p>By definition, $dz=\nabla z\cdot(dx,dy)$.</p>
 <p>To find the partial derivative of $z$ with respect to $x$, we can think of $y$ as a constant and differentiate in the usual way:</p>
 <p>$$\frac{\partial z}{\partial x}=y(1+xy)^{y-1}y$$</p>
@@ -36,6 +38,15 @@ $$\frac{\partial z}{\partial y}=\left(\ln(1+xy)+\frac{xy}{1+xy}\right)(1+xy)^y$$
 <p>Now we can calculate then final answer:
 $$dz=\left(y(1+xy)^{y-1}y\right)dx+\left(\left(\ln(1+xy)+\frac{xy}{1+xy}\right)(1+xy)^y\right)dy$$
 $$dz|_{(1,1)}=dx+(2\ln2+1)dy$$</p>
-<h2>2 Total differential</h2>
-<p>$$\begin{aligned}dz&=\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy\\&=\nabla f\cdot(dx,dy)\end{aligned}$$</p>
-</div><div class='purplebox foot-box'><i>Last updated November 10, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 1fe</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+<p><strong>Example 2.2</strong>: Given $x=ze^{y+z}$, find $dz$ at $(e,0)$.</p>
+<p>By using the same approach as described in the previous example, we can calculate $\frac{\partial z}{\partial x}$:
+$$\partial x=e^ye^z\partial z+ze^ze^y\partial z$$
+$$\frac{\partial z}{\partial x}=\frac1{e^ye^z(1+z)}$$</p>
+<p>Similarly, for $\frac{\partial z}{\partial y}$:</p>
+<p>$$0=e^ye^z\partial z+ze^ye^z\partial y+ze^ye^z\partial z$$
+$$\frac{\partial z}{\partial y}=-\frac{ze^ye^z}{e^ye^z+ze^ye^z}=-\frac{z}{1+z}$$</p>
+<p>Solving for $z$ at point $(e,0)$, we have $z=1$.</p>
+<p>Then:
+$$dz=\nabla\cdot(dx,dy)=\frac{dx}{e^{y+z}(1+z)}-\frac{zdy}{1+z}$$
+$$dz|_{(e,0)}=\frac{dx}{2e}-\frac{dy}2$$</p>
+</div><div class='purplebox foot-box'><i>Last updated November 13, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 202</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
