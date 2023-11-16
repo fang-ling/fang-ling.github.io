@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='style.css' rel='stylesheet' type='text/css'><title>Partial Derivatives</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'><link type='text/css' rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link type='text/css' href='style.css' rel='stylesheet'><title>Partial Derivatives</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -25,7 +25,7 @@ MathJax = {
 </ul>
 <h2>2 Total differential</h2>
 <p>$$\begin{aligned}dz&=\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy\\&=\nabla f\cdot(dx,dy)\end{aligned}$$</p>
-<p><strong>Example 2.1</strong>: Let $z=(1+xy)^y$, find $dz|_{(1,1)}$.</p>
+<p><strong>Example 1</strong>: Let $z=(1+xy)^y$, find $dz|_{(1,1)}$.</p>
 <p>By definition, $dz=\nabla z\cdot(dx,dy)$.</p>
 <p>To find the partial derivative of $z$ with respect to $x$, we can think of $y$ as a constant and differentiate in the usual way:</p>
 <p>$$\frac{\partial z}{\partial x}=y(1+xy)^{y-1}y$$</p>
@@ -38,7 +38,7 @@ $$\frac{\partial z}{\partial y}=\left(\ln(1+xy)+\frac{xy}{1+xy}\right)(1+xy)^y$$
 <p>Now we can calculate then final answer:
 $$dz=\left(y(1+xy)^{y-1}y\right)dx+\left(\left(\ln(1+xy)+\frac{xy}{1+xy}\right)(1+xy)^y\right)dy$$
 $$dz|_{(1,1)}=dx+(2\ln2+1)dy$$</p>
-<p><strong>Example 2.2</strong>: Given $x=ze^{y+z}$, find $dz$ at $(e,0)$.</p>
+<p><strong>Example 2</strong>: Given $x=ze^{y+z}$, find $dz$ at $(e,0)$.</p>
 <p>By using the same approach as described in the previous example, we can calculate $\frac{\partial z}{\partial x}$:
 $$\partial x=e^ye^z\partial z+ze^ze^y\partial z$$
 $$\frac{\partial z}{\partial x}=\frac1{e^ye^z(1+z)}$$</p>
@@ -49,7 +49,7 @@ $$\frac{\partial z}{\partial y}=-\frac{ze^ye^z}{e^ye^z+ze^ye^z}=-\frac{z}{1+z}$$
 <p>Then:
 $$dz=\nabla\cdot(dx,dy)=\frac{dx}{e^{y+z}(1+z)}-\frac{zdy}{1+z}$$
 $$dz|_{(e,0)}=\frac{dx}{2e}-\frac{dy}2$$</p>
-<p><strong>Example 2.3</strong>: Given that $dz=(x^2+2xy-y^2)dx+(x^2-2xy-y^2)dy$, find $z(x,y)$.</p>
+<p><strong>Example 3</strong>: Given that $dz=(x^2+2xy-y^2)dx+(x^2-2xy-y^2)dy$, find $z(x,y)$.</p>
 <p>By definition, we have:
 $$\frac{\partial z}{\partial x}=x^2+2xy-y^2$$
 $$\frac{\partial z}{\partial y}=x^2-2xy-y^2$$</p>
@@ -61,4 +61,4 @@ $$\frac{\partial z}{\partial y}=x^2-2xy-y^2$$</p>
 <p>$$u'(y)=-y^2$$</p>
 <p>That is, $u(y)=-\frac{y^3}3+C$. And now we have:</p>
 <p>$$z=\frac{x^3}3+x^2y-y^2x-\frac{y^3}3+C$$</p>
-</div><div class='purplebox foot-box'><i>Last updated November 14, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 205</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated November 15, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 20f</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
