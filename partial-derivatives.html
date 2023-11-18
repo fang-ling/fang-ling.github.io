@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css' rel='stylesheet'><link type='text/css' rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link type='text/css' href='style.css' rel='stylesheet'><title>Partial Derivatives</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='style.css' rel='stylesheet' type='text/css'><title>Partial Derivatives</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -61,4 +61,17 @@ $$\frac{\partial z}{\partial y}=x^2-2xy-y^2$$</p>
 <p>$$u'(y)=-y^2$$</p>
 <p>That is, $u(y)=-\frac{y^3}3+C$. And now we have:</p>
 <p>$$z=\frac{x^3}3+x^2y-y^2x-\frac{y^3}3+C$$</p>
-</div><div class='purplebox foot-box'><i>Last updated November 15, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 20f</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
+<p><strong>Example 4</strong>: Find the tangent plane and the normal line to the surface
+$$z=x^2+y^2-1$$
+at the point $(2,1,4)$.</p>
+<p>Let $F(x,y,z)=x^2+y^2-z-1$.</p>
+<p>By definition, we have the normal vector
+$$\begin{aligned}\textbf n&=\nabla F|_{(2,1,4)}\\
+&=(2x,2y,-1)|_{(2,1,4)}\\
+&=(4,2,-1)\end{aligned}$$</p>
+<p>So the equation of the tangent plane is
+$$4(x-1)+2(y-1)-(z-4)=0$$
+or $$4x+2y-z=6$$</p>
+<p>And the equation of the normal line is
+$$\frac{x-2}4=\frac{y-1}2=\frac{z-4}{-1}$$</p>
+</div><div class='purplebox foot-box'><i>Last updated November 18, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 216</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
