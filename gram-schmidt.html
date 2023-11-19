@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' type='text/css' rel='stylesheet'><link type='text/css' rel='stylesheet' href='style.css'><title>Gram-Schmidt</title><!--Custom head-->
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    macros: {      phi:"\\varphi"    }
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><h1 class='title-text'><strong>Gram-Schmidt</strong></h1><div class='purplebox head-box'>Undergraduate&nbsp;&nbsp;&bull;&nbsp;&nbsp;Guitar Player&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='gear.html'>Gear</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='https://github.com/fang-ling'>GitHub</a></div><div class='page-container'><h2>Introduction</h2>
+<blockquote>
+<p>Start with three independent vectors $a,b,c$. We intend to construct three orthogonal vectors $A,B,C$. Then we divide $A,B,C$ by their lengths. That produces three orthonormal vectors $q_1=\frac A{|A|}$, $q_2=\frac B{|B|}$, $q_3=\frac C{|C|}$.</p>
+<p><strong>Gram-Schmidt</strong> Begin by choosing $A=a$. This first direction is accepted as it comes. The next direction $B$ must be perpendicular to $A$. Start with $b$ and subtract its projection along $A$. This leaves the perpendicular part, which is the orthogonal vector $B$.</p>
+<p>$$B=b-\frac{A^Tb}{A^TA}A$$</p>
+<p>The third direction starts with $c$. This is not a combination of $A$ and $B$ (because $c$ is not a combination of $a$ and $b$.) But most likely $c$ is not perpendicular to $A$ and $B$. So subtract off its components in those two directions to get a perpendicular direction $C$:</p>
+<p>$$C=c-\frac{A^Tc}{A^TA}A-\frac{B^Tc}{B^TB}B$$</p>
+<p>This is the one and only idea of the Gram-Schmidt process. Subtract from every new vector its projections in the direction already set.</p>
+</blockquote>
+</div><div class='purplebox foot-box'><i>Last updated November 19, 2023 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.4</a><span>Build: 21b</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2023 Fang Ling</p></div></body></html>
