@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet' type='text/css'><link href='style.css' type='text/css' rel='stylesheet'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='style.css' type='text/css' rel='stylesheet'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -112,11 +112,11 @@ req.send();
 
 req.onreadystatechange=function() {
   if (this.readyState == 4 && this.status == 200) {
-    const msg = JSON.parse(Http.responseText);
-    document.getElementById("zyy-rec-1").innerHTML="❤️ "+msg[0].emoji_1;
-    document.getElementById("zyy-rec-2").innerHTML="👍 "+msg[0].emoji_2;
-    document.getElementById("zyy-rec-3").innerHTML="😅 "+msg[0].emoji_3;
-    document.getElementById("zyy-rec-4").innerHTML="💩 "+msg[0].emoji_4;
+    const msg = JSON.parse(req.responseText);
+    document.getElementById("zyy-rec-1").innerHTML="❤️ "+msg.emoji_1;
+    document.getElementById("zyy-rec-2").innerHTML="👍 "+msg.emoji_2;
+    document.getElementById("zyy-rec-3").innerHTML="😅 "+msg.emoji_3;
+    document.getElementById("zyy-rec-4").innerHTML="💩 "+msg.emoji_4;
   }
 }
 
@@ -162,4 +162,4 @@ function zyy_rec_upd4() {
   <small>
     Reactions powered by <a href="https://vapor.codes" target="_blank">Vapor</a> + <a href="https://sqlite.org" target="_blank">SQLite</a>
   </small>
-</div><div class='purplebox foot-box'><i>Last updated January 25, 2024 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.6</a><span>Build: 271</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated January 25, 2024 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.6</a><span>Build: 273</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
