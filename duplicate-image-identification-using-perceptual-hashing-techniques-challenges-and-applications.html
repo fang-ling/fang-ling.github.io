@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' type='text/css'><link type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet'><link href='style.css' rel='stylesheet' type='text/css'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet' type='text/css'><link href='style.css' type='text/css' rel='stylesheet'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -105,4 +105,61 @@ MathJax = {
 <sup id="fn6">6. GRAHAM, Ronald L., et al. Concrete mathematics: a foundation for computer science. Computers in Physics, 1989. <a href="#ref6">↩</a></sup><br>
 <sup id="fn7">7. https://en.wikipedia.org/wiki/Hamming_distance <a href="#ref7">↩</a></sup><br>
 <sup>8. https://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html </sup></p>
-</div><div class='purplebox foot-box'><i>Last updated January 23, 2024 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.6</a><span>Build: 26e</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
+</div><script>
+const req = new XMLHttpRequest();
+req.open("GET", "https://api.fangl.ing/get?slug=duplicate-image-identification-using-perceptual-hashing-techniques-challenges-and-applications");
+req.send();
+
+req.onreadystatechange=function() {
+  if (this.readyState == 4 && this.status == 200) {
+    const msg = JSON.parse(Http.responseText);
+    document.getElementById("zyy-rec-1").innerHTML="❤️ "+msg[0].emoji_1;
+    document.getElementById("zyy-rec-2").innerHTML="👍 "+msg[0].emoji_2;
+    document.getElementById("zyy-rec-3").innerHTML="😅 "+msg[0].emoji_3;
+    document.getElementById("zyy-rec-4").innerHTML="💩 "+msg[0].emoji_4;
+  }
+}
+
+function zyy_rec_upd1() {
+  const str = document.getElementById("zyy-rec-1").innerHTML.split(' ');
+  document.getElementById("zyy-rec-1").innerHTML = str[0] + ' ' + (parseInt(str[1]) + 1);
+  
+  const Http = new XMLHttpRequest();
+  Http.open("GET", "https://api.fangl.ing/add?slug=duplicate-image-identification-using-perceptual-hashing-techniques-challenges-and-applications&emoji=emoji_1");
+  Http.send();
+}
+function zyy_rec_upd2() {
+  const str = document.getElementById("zyy-rec-2").innerHTML.split(' ');
+  document.getElementById("zyy-rec-2").innerHTML = str[0] + ' ' + (parseInt(str[1]) + 1);
+  
+  const Http = new XMLHttpRequest();
+  Http.open("GET", "https://api.fangl.ing/add?slug=duplicate-image-identification-using-perceptual-hashing-techniques-challenges-and-applications&emoji=emoji_2");
+  Http.send();
+}
+function zyy_rec_upd3() {
+  const str = document.getElementById("zyy-rec-3").innerHTML.split(' ');
+  document.getElementById("zyy-rec-3").innerHTML = str[0] + ' ' + (parseInt(str[1]) + 1);
+  
+  const Http = new XMLHttpRequest();
+  Http.open("GET", "https://api.fangl.ing/add?slug=duplicate-image-identification-using-perceptual-hashing-techniques-challenges-and-applications&emoji=emoji_3");
+  Http.send();
+}
+function zyy_rec_upd4() {
+  const str = document.getElementById("zyy-rec-4").innerHTML.split(' ');
+  document.getElementById("zyy-rec-4").innerHTML = str[0] + ' ' + (parseInt(str[1]) + 1);
+  
+  const Http = new XMLHttpRequest();
+  Http.open("GET", "https://api.fangl.ing/add?slug=duplicate-image-identification-using-perceptual-hashing-techniques-challenges-and-applications&emoji=emoji_4");
+  Http.send();
+}
+
+</script>
+<div>
+  <button id="zyy-rec-1" style="margin-right: 1em;" onclick="zyy_rec_upd1()">❤️ -19358</button>
+  <button id="zyy-rec-2" style="margin-right: 1em;" onclick="zyy_rec_upd2()">👍 -19358</button>
+  <button id="zyy-rec-3" style="margin-right: 1em;" onclick="zyy_rec_upd3()">😅 -19358</button>
+  <button id="zyy-rec-4" style="margin-right: 1em;" onclick="zyy_rec_upd4()">💩 -19358</button>
+  <small>
+    Reactions powered by <a href="https://vapor.codes" target="_blank">Vapor</a> + <a href="https://sqlite.org" target="_blank">SQLite</a>
+  </small>
+</div><div class='purplebox foot-box'><i>Last updated January 25, 2024 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.6</a><span>Build: 271</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
