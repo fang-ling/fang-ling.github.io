@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet'><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='style.css' rel='stylesheet' type='text/css'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin'><link type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css' rel='stylesheet'><link type='text/css' href='../style.css' rel='stylesheet'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
 <link rel="icon" type="image/png" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
@@ -13,7 +13,7 @@ MathJax = {
 };
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><h1 class='title-text'><strong>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</strong></h1><div class='purplebox head-box'>Undergraduate&nbsp;&nbsp;&bull;&nbsp;&nbsp;Guitar Player&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='gear.html'>Gear</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='https://github.com/fang-ling'>GitHub</a></div><div class='page-container'><h2>Abstract</h2>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><h1 class='title-text'><strong>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</strong></h1><div class='purplebox head-box'>Undergraduate&nbsp;&nbsp;&bull;&nbsp;&nbsp;Guitar Player&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='../gear.html'>Gear</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href='../https://github.com/fang-ling'>GitHub</a></div><div class='page-container'><h2>Abstract</h2>
 <p>This article proposes a method based on perceptual hashing for identifying duplicate images. This method begins by converting color images to grayscale and then utilizes bilinear interpolation to resize the images, enhancing their consistency and insensitivity to scale. Subsequently, we employ the discrete cosine transform (DCT) to extract low-frequency information from the images, capturing their structural characteristics.We implemented the components using the Swift programming language and tested them using a local image database that contains a large number of images, resulting in impressive findings. The article presents the implementation details of the method. Future work can focus on further enhancing the accuracy and robustness of the method to address more complex variations in images.</p>
 <h2>Introduction</h2>
 <p>Starting from macOS Ventura, Apple has introduced a new feature<sup><a id="ref1" href="#fn1">1</a></sup> for its Photos app -- Duplicate Image Detection. As I am currently enrolled in a digital image processing course this semester, I am very curious about how it is implemented, or rather, how to solve a problem like finding similar images.</p>
@@ -34,8 +34,8 @@ MathJax = {
 <p>The basic principle of Perceptual Hashing is to convert an image into a grayscale image and performing a series of preprocessing steps, such as resizing. Then, a specific mathematical function (typically Discrete Cosine Transform) is used to convert the image into its spectral representation. Finally, the hash value is calculated based on the spectral representation.</p>
 <p>The complete program framework is shown in the following figure.</p>
 <picture class="image">
-  <source srcset="images/15-1.jxl" type="image/jxl">
-  <img src="images/15-1.webp">
+  <source srcset="../images/15-1.jxl" type="image/jxl">
+  <img src="../images/15-1.webp">
 </picture>
 <p>Next, we will describe the detailed implementation of each step.</p>
 <h3>Image decoding</h3>
@@ -45,8 +45,8 @@ MathJax = {
 <li><strong>Planar</strong> stores each color channel in separate buffers. For example, a 4-channel image would be stored as four individual buffers containing alpha, red, green, and blue data.</li>
 </ol>
 <picture class="image">
-  <source srcset="images/15-2.jxl" type="image/jxl">
-  <img src="images/15-2.webp">
+  <source srcset="../images/15-2.jxl" type="image/jxl">
+  <img src="../images/15-2.webp">
 </picture>
 <p>Image source: <a href="https://developer.apple.com/documentation/accelerate/optimizing_image-processing_performance">Apple Developer Documentation</a>.</p>
 <p>Since operating on a single color channel at a time can simplify our program (allowing the use of the same processing function for different channels), the Planar layout is used here.</p>
@@ -93,8 +93,8 @@ MathJax = {
 <p>By comparing the Hamming distance<sup><a id="ref7" href="#fn7">7</a></sup> between the hash values of different images, we can determine whether they are similar. The smaller the Hamming distance between the hash values, the more similar the images. Based on my (preliminary) testing on a database of over 20,000 images, a Hamming distance of less than or equal to 5 appears to be a reasonable threshold. (Due to time constraints, I was unable to conduct extensive testing on different parameters of the algorithm in this context.)</p>
 <p>The next figure illustrates the process of our program operating on three example images.</p>
 <picture class="image">
-  <source srcset="images/15-3.jxl" type="image/jxl">
-  <img src="images/15-3.webp">
+  <source srcset="../images/15-3.jxl" type="image/jxl">
+  <img src="../images/15-3.webp">
 </picture>
 <h2>References</h2>
 <p><sup id="fn1">1. https://www.apple.com/macos/ventura/features/ <a href="#ref1">↑</a></sup><br>
@@ -180,4 +180,4 @@ function zyy_rec_upd4() {
   <small>
     Reactions powered by <a href="https://vapor.codes" target="_blank">Vapor</a> + <a href="https://sqlite.org" target="_blank">SQLite</a>
   </small>
-</div><div class='purplebox foot-box'><i>Last updated January 25, 2024 by <a href='index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.7</a><span>Build: 27d</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated January 26, 2024 by <a href='../index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='../index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.7</a><span>Build: 29a</span><br>Blog theme is highly inspired<a href='https://erikdemaine.org'>by Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
