@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link type='text/css' href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet'><link type='text/css' rel='stylesheet' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='../style.css' rel='stylesheet' type='text/css'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
+<html lang='en'><head><meta charset='UTF-8'><meta content='width=device-width initial-scale=1' name='viewport'><link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700italic,700,400italic:latin' rel='stylesheet' type='text/css'><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/style.css'><link href='../style.css' rel='stylesheet' type='text/css'><title>Duplicate Image Identification using Perceptual Hashing: Techniques, Challenges, and Applications</title><!--Custom head-->
 <link rel="icon" type="image/png" href="/images/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -86,6 +86,10 @@ MathJax = {
 <p>Next, the $X_0$ term is multiplied by $\frac{1}{\sqrt N}$, and the remaining terms are multiplied by $\frac{\sqrt2}{\sqrt N}$, ensuring the resulting DCT matrix is orthogonal. It can be observed that the time complexity of the one-dimensional DCT is $O(N^2)$.</p>
 <p>However, a one-dimensional DCT is not enough for image data. Fortunately, based on the properties of summation symbols<sup><a id="ref6" href="#fn6">6</a></sup>, we can first apply DCT to each row of the image matrix, and then apply DCT to each column. This process completes a two-dimensional DCT. Assuming the size of the image matrix is $N \times M$, the time complexity of the two-dimensional DCT is $O(N^2M^2)$.</p>
 <p>Related code: <a href="https://github.com/fang-ling/image-transformation/blob/main/Sources/ImageTransformation/Transformation/DiscreteCosineTransform.swift">DiscreteCosineTransform.swift</a>.</p>
+<picture class="image">
+  <source srcset="../images/15-4.jxl" type="image/jxl">
+  <img src="../images/15-4.webp">
+</picture>
 <h3>Construct the hash value</h3>
 <p>After the aforementioned calculations, we obtain a $32\times32$ DCT matrix for the image, which encodes the frequency information of the scaled image. We only keep the top-left $8\times8$ matrix, which represents the low-frequency information in the image.</p>
 <p>Next, we compute the average of this smaller matrix, excluding the first element. The first element has a significant numerical difference compared to the others and can disrupt the overall average of the matrix. Thus, we calculate the average of the remaining $63$ elements.</p>
@@ -180,4 +184,4 @@ function zyy_rec_upd4() {
   <small>
     Reactions powered by <a href="https://vapor.codes" target="_blank">Vapor</a> + <a href="https://sqlite.org" target="_blank">SQLite</a>
   </small>
-</div><div class='purplebox foot-box'><i>Last updated January 26, 2024 by <a href='../index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='../index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.8</a><span>Build: 2ae</span><br>Theme based on the design<a href='https://erikdemaine.org'>of Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
+</div><div class='purplebox foot-box'><i>Last updated February 17, 2024 by <a href='../index.html'>Fang Ling</a>.</i></div><br><div class='footer'>Made with ♡<a href='../index.html'>by Fang Ling</a><a href='https://github.com/fang-ling/zyy'>zyy v0.1.8</a><span>Build: 2b2</span><br>Theme based on the design<a href='https://erikdemaine.org'>of Prof. Erik Demaine</a><p class='copyright'>© 2018-2024 Fang Ling</p></div></body></html>
